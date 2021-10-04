@@ -36,10 +36,69 @@ struct league
 
 	void change_league(league var)
 	{
-		int i; char* str; SetConsoleCP(1251); SetConsoleOutputCP(1251);
+		int i,check; char* str; SetConsoleCP(1251); SetConsoleOutputCP(1251);
 		setlocale(LC_ALL, "Russian");
-		printf("¬ы хотите изменить id лиги (%s)? (1-да, 0-нет)",var.id);
-	
+		printf("¬ы хотите изменить id лиги (на данный момент - %d)? (1-да, 0-нет)\n",var.id);
+		scanf("%d",&check);
+		if (check==1)
+		{
+			printf("¬ведите новый id лиги\n");
+			scanf("%d",&i);
+			var.id = i;
+		}
+		else
+		{
+			return;
+		}
+		printf("¬ы хотите изменить название лиги (на данный момент - %s)? (1-да, 0-нет)\n", var.name);
+		scanf("%d", &check);
+		if (check == 1)
+		{
+			printf("¬ведите новое им€ лиги\n");
+			scanf("%s", &str);
+			strcpy(var.name,str);
+		}
+		else
+		{
+			return;
+		}
+		printf("¬ы хотите изменить количество команд в лиге (на данный момент - %d)? (1-да, 0-нет)\n", var.value_of_teams);
+		scanf("%d", &check);
+		if (check == 1)
+		{
+			printf("¬ведите количество команд в лиге\n");
+			scanf("%d", &i);
+			var.value_of_teams = i;
+		}
+		else
+		{
+			return;
+		}
+		printf("¬ы хотите изменить сезон лиги (на данный момент - %s)? (1-да, 0-нет)\n", var.years);
+		scanf("%d", &check);
+		if (check == 1)
+		{
+			printf("¬ведите сезон лиги\n");
+			scanf("%s", &str);
+			strcpy(var.years,str);
+		}
+		else
+		{
+			return;
+		}
+		printf("¬ы хотите изменить страну лиги (на данный момент - %s)? (1-да, 0-нет)\n", var.location);
+		scanf("%d", &check);
+		if (check == 1)
+		{
+			printf("¬ведите сезон лиги\n");
+			scanf("%s", &str);
+			strcpy(var.location, str);
+		}
+		else
+		{
+			return;
+		}
+
 	};
 
 };
