@@ -1,10 +1,24 @@
 #pragma once
+#include <string.h>
 struct league
 { 
+	int id;
 	char name [50];
 	int value_of_teams;
 	char years[9];
 	char location[50];
+	//////////////////////////
+	league(int id1,char* name1, int value_of_teams1, char* years1, char* location1)
+	{
+		id = id1;
+		strcpy(name,name1);
+		int value_of_teams = value_of_teams1;
+		strcpy(years, years1);
+		strcpy(location, location1);
+
+	};
+
+
 };
 struct team 
 {	
