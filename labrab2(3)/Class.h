@@ -46,9 +46,3 @@ struct goalkeeper
 	char nation[30];
 
 };
-struct country
-{
-
-
-
-};
