@@ -4,6 +4,7 @@ struct league
 	char name [50];
 	int value_of_teams;
 	char years[9];
+	char country[30];
 };
 struct team 
 {	
@@ -14,6 +15,7 @@ struct team
 	int draws;
 	int value_of_field_players;
 	int value_of_goalkeepers;
+	char country[30];
 
 };
 struct field_player
@@ -27,6 +29,7 @@ struct field_player
 	int red_cards;
 	int yellow_cards;
 	char position[15];
+	char country[30];
 
 };
 struct goalkeepers
@@ -40,6 +43,6 @@ struct goalkeepers
 	int red_cards;
 	int yellow_cards;
 	int missed_balls;
-
+	char country[30];
 
 };
