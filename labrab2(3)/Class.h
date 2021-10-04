@@ -1,5 +1,13 @@
 #pragma once
 #include <string.h>
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <random>
+#include <time.h>
+#include <Windows.h>
+#define _CRT_SECURE_NO_WARNINGS
 struct league
 { 
 	int id;
@@ -17,7 +25,22 @@ struct league
 		strcpy(location, location1);
 
 	};
+	void delete_league(league var) 
+	{
+		var.id = 0;
+		strcpy(var.location ,"deleted");
+		var.value_of_teams = 0;
+		strcpy(var.name, "deleted");
+		strcpy(var.years, "deleted");
+	};
 
+	void change_league(league var)
+	{
+		int i; char* str; SetConsoleCP(1251); SetConsoleOutputCP(1251);
+		setlocale(LC_ALL, "Russian");
+		printf("Вы хотите изменить id лиги (%s)? (1-да, 0-нет)",var.id);
+	
+	};
 
 };
 struct team 
