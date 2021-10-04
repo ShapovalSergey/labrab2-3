@@ -30,6 +30,8 @@ struct field_player
 	int yellow_cards;
 	char position[15];
 	char nation[30];
+	int weight;
+	int height;
 
 };
 struct goalkeeper
@@ -44,5 +46,7 @@ struct goalkeeper
 	int yellow_cards;
 	int missed_balls;
 	char nation[30];
+	int weight;
+	int height;
 
 };
