@@ -5,5 +5,9 @@ struct game
 	char home_team[50];
 	char visitor_team[50];
 	char result[10];
+	//////////////////////////func
+
+
+
 };
 

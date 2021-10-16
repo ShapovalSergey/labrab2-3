@@ -13,7 +13,7 @@ struct league
 	int value_of_teams;
 	char years[9];
 	char location[50];
-	//////////////////////////
+	//////////////////////////func
 	league(char* name1, int value_of_teams1, char* years1, char* location1)
 	{
 		
@@ -25,17 +25,26 @@ struct league
 	};
 	void delete_league(league var) 
 	{
-		var.id = 0;
 		strcpy(var.location ,"deleted");
 		var.value_of_teams = 0;
 		strcpy(var.name, "deleted");
 		strcpy(var.years, "deleted");
 	};
-
-	void change_league(league var)
+	void change_name(league a, char* name1) 
 	{
-		
-
+		strcpy(a.name, name1);
+	};
+	void change_value(league a, int value)
+	{
+		a.value_of_teams = value;
+	};
+	void change_years(league a, char* years1)
+	{
+		strcpy(a.years, years1);
+	};
+	void change_loc(league a, char* location1)
+	{
+		strcpy(a.location, location1);
 	};
 
 };
