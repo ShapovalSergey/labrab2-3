@@ -1,10 +1,9 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
-
-struct team
+#include "Class.h"
+struct team : league
 {
-	struct league;
 	char name[50];
 	int wins;
 	int defeats;
@@ -13,9 +12,9 @@ struct team
 	int value_of_goalkeepers;
 	char location[50];
 	//////////////////////////func
-	team(const league &a, char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, char* location1)
+	team(const league &a, char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, char* location1): league(a)
 	{
-		league : a;
+		
 		strcpy(name,name1);
 		wins = wins1;
 		defeats = defeats1;

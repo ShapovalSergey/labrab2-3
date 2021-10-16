@@ -1,7 +1,8 @@
 #pragma once
-struct field_player
+#include "team.h"
+struct field_player:team
 {
-	struct team;
+	
 	char name[30];
 	int age;
 	int games;
@@ -13,6 +14,8 @@ struct field_player
 	char nation[30];
 	int weight;
 	int height;
+	//////////////////////////func
+
 
 };
 

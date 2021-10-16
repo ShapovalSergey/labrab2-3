@@ -1,7 +1,8 @@
 #pragma once
-struct goalkeeper
+#include "team.h"
+struct goalkeeper:team
 {
-	struct team;
+
 	char name[30];
 	int age;
 	int games;
@@ -13,6 +14,15 @@ struct goalkeeper
 	char nation[30];
 	int weight;
 	int height;
+	//////////////////////////func
+	goalkeeper(const team &a ): team(a)
+	{
+	
+
+
+
+
+	};
 
 };
 
