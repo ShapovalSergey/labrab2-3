@@ -5,6 +5,7 @@
 #include "goalkeeper.h"
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
+#include <stdlib.h>
 #include <locale.h>
 #include <iostream>
 #include <conio.h>
@@ -78,10 +79,10 @@ void func1()
             }
 
         }
-
+        league* b = (league*)malloc(sizeof(league));
         while (mode ==2)
         {
-            league *b;
+            
             printf("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
             scanf("%d", &action);
             if (action == 1)
