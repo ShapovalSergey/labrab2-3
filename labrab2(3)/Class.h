@@ -15,7 +15,7 @@ struct league
 	char location[50];
 	//////////////////////////func
 	league() {};
-	league(char* name1, int value_of_teams1, char* years1, char* location1)
+	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
 	{
 		
 		strcpy(name,name1);

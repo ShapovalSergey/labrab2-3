@@ -9,17 +9,60 @@
 #include <iostream>
 #include <conio.h>
 
+league a1("РПЛ",16,"2020-2021","Россия");
+team b1(a1,"Динамо", 10,9,1,15,3,"Москва");
+
+
 void func1() 
 {
-    int check = 1;
+    int check = 1; int mode; int action ;
     while (check == 1)
     {
         league a,*b; 
+        printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический");
+        scanf("%d",&mode);
+        while (mode==1)
+        {
+            printf("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
+            scanf("%d",&action);
+            if (action ==1)
+            {
+
+            }
+            if (action == 2)
+            {
+
+            }
+            if (action == 3)
+            {
+
+            }
+            if (action == 4)
+            {
+
+            }
+            if (action == 5)
+            {
+
+            }
+            if (action == 6)
+            {
+
+            }
 
 
 
 
 
+
+
+
+        }
+
+        while (mode ==2)
+        {
+
+        }
 
 
 
