@@ -31,21 +31,21 @@ struct league
 		strcpy(var.name, "deleted");
 		strcpy(var.years, "deleted");
 	};
-	void change_name(league a, char* name1) 
+	void change_name( char* name1) 
 	{
-		strcpy(a.name, name1);
+		strcpy(name, name1);
 	};
-	void change_value(league a, int value)
+	void change_value( int value)
 	{
-		a.value_of_teams = value;
+		value_of_teams = value;
 	};
-	void change_years(league a, char* years1)
+	void change_years( char* years1)
 	{
-		strcpy(a.years, years1);
+		strcpy(years, years1);
 	};
-	void change_loc(league a, char* location1)
+	void change_loc( char* location1)
 	{
-		strcpy(a.location, location1);
+		strcpy(location, location1);
 	};
 
 };
