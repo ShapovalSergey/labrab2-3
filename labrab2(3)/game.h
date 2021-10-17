@@ -8,6 +8,7 @@ struct game
 	char visitor_team[50];
 	char result[10];
 	//////////////////////////func
+	game() {};
 	game(char* name, char* rez, char* vis, char* home)
 	{
 		strcpy(league_name,name);

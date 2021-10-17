@@ -17,6 +17,7 @@ struct field_player:team
 	int weight;
 	int height;
 	//////////////////////////func
+	field_player(const team &a) :team(a){};
 	field_player(const team& a, char* name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, char* position1, char* nation1, int weig1, int heig1) : team(a)
 	{
 		strcpy(name, name1);

@@ -17,6 +17,7 @@ struct goalkeeper:team
 	int weight;
 	int height;
 	//////////////////////////func
+	goalkeeper(const team& a) :team(a) {};
 	goalkeeper(const team &a, char* name1,int age1,int games1,int goals1, int assists1,int red1,int yellow1,int miss1, char* nation1, int weig1, int heig1 ): team(a)
 	{
 		strcpy(name,name1);
