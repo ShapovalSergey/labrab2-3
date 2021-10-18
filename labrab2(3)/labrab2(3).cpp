@@ -593,13 +593,293 @@ void func3()
                 printf("%s %d %d %d %d %d %s %d %d %d\n", b->name, b->age, b->goals, b->assists, b->red_cards, b->yellow_cards, b->nation, b->missed_balls, b->weight, b->height);
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
     printf("Вы хотите продолжить? 1 - да, 0 - нет ");
     scanf("%d", &check);
 }
 };
+
+void func4()
+{
+    int check = 1; int mode; int action;
+    while (check == 1)
+    {
+        field_player a;
+        printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический ");
+        scanf("%d", &mode);
+        while (mode == 1)
+        {
+            printf("Выберите, что вы хотите сделать\n1)Ввести  данные полевого игрока\n2)Изменить имя полевого игрока\n3)Изменить возраст полевого игрока\n4)Изменить количество голов полевого игрока\n5)Изменить количество асистов полевого игрока\n6)Изменить количество красных карточек\n7)Изменить количество желтых карточек\n8)Изменить позицию\n9)Изменить национальность полевого игрока\n10)Изменить вес полевого игрока\n11)Изменить рост полевого игрока\n12)Вывести данные полевого игрока\n");
+            scanf("%d", &action);
+            if (action == 1)
+            {
+                char im[50], loc[50]; int i; char pos[15];
+                printf("Введите имя полевого игрока\n");
+                scanf("%s", &im);
+                a.change_name(im);
+                printf("Введите возраст\n");
+                scanf("%d", &i);
+                a.change_age(i);
+                printf("Введите количество голов полевого игрока\n");
+                scanf("%d", &i);
+                a.change_goals(i);
+                printf("Введите количество асистов полевого игрока\n");
+                scanf("%d", &i);
+                a.change_assists(i);
+                printf("Введите количество красных карточек\n");
+                scanf("%d", &i);
+                a.change_red_cards(i);
+                printf("Введите количество желтых карточек\n");
+                scanf("%d", &i);
+                a.change_yellow_cards(i);
+                printf("Введите позицию\n");
+                scanf("%s", &pos);
+                a.change_position(pos);
+                printf("Введите национальность полевого игрока\n");
+                scanf("%s", &loc);
+                a.change_nation(loc);
+                printf("Введите вес полевого игрока\n");
+                scanf("%d", &i);
+                a.change_weight(i);
+                printf("Введите рост полевого игрока\n");
+                scanf("%d", &i);
+                a.change_height(i);
+            }
+            if (action == 2)
+            {
+                char im[50];
+                printf("Введите имя полевого игрока\n");
+                scanf("%s", &im);
+                a.change_name(im);
+            }
+            if (action == 3)
+            {
+                int i;
+                printf("Введите возраст\n");
+                scanf("%d", &i);
+                a.change_age(i);
+
+            }
+            if (action == 4)
+            {
+                int i;
+                printf("Введите количество голов полевого игрока\n");
+                scanf("%d", &i);
+                a.change_goals(i);
+            }
+            if (action == 5)
+            {
+                int i;
+                printf("Введите количество асистов полевого игрока\n");
+                scanf("%d", &i);
+                a.change_assists(i);
+            }
+            if (action == 6)
+            {
+                int i;
+                printf("Введите количество красных карточек\n");
+                scanf("%d", &i);
+                a.change_red_cards(i);
+            }
+            if (action == 7)
+            {
+                int i;
+                printf("Введите количество желтых карточек\n");
+                scanf("%d", &i);
+                a.change_yellow_cards(i);
+
+            }
+            if (action == 8)
+            {
+                char pos[15];
+                printf("Введите позицию\n");
+                scanf("%s", &pos);
+                a.change_position(pos);
+            }
+            if (action == 9)
+            {
+                char loc[50];
+                printf("Введите национальность полевого игрока\n");
+                scanf("%s", &loc);
+                a.change_nation(loc);
+            }
+            if (action == 10)
+            {
+                int i;
+                printf("Введите вес полевого игрока\n");
+                scanf("%d", &i);
+                a.change_height(i);
+
+            }
+            if (action == 11)
+            {
+                int i;
+                printf("Введите рост полевого игрока\n");
+                scanf("%d", &i);
+                a.change_height(i);
+
+            }
+            if (action == 12)
+            {
+                printf("%s %d %d %d %d %d %s %s %d %d\n", a.name, a.age, a.goals, a.assists, a.red_cards, a.yellow_cards, a.nation, a.position, a.weight, a.height);
+            }
+            _getch();
+            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            scanf("%d", &mode);
+        }
+        field_player* b = (field_player*)malloc(sizeof(field_player));
+        while (mode == 2)
+        {
+            printf("Выберите, что вы хотите сделать\n1)Ввести  данные полевого игрока\n2)Изменить имя полевого игрока\n3)Изменить возраст полевого игрока\n4)Изменить количество голов полевого игрока\n5)Изменить количество асистов полевого игрока\n6)Изменить количество красных карточек\n7)Изменить количество желтых карточек\n8)Изменить позицию\n9)Изменить национальность полевого игрока\n10)Изменить вес полевого игрока\n11)Изменить рост полевого игрока\n12)Вывести данные полевого игрока\n");
+            scanf("%d", &action);
+            if (action == 1)
+            {
+                char im[50], loc[50]; int i;char pos[15];
+                printf("Введите имя полевого игрока\n");
+                scanf("%s", &im);
+                b->change_name(im);
+                printf("Введите возраст\n");
+                scanf("%d", &i);
+                b->change_age(i);
+                printf("Введите количество голов полевого игрока\n");
+                scanf("%d", &i);
+                b->change_goals(i);
+                printf("Введите количество асистов полевого игрока\n");
+                scanf("%d", &i);
+                b->change_assists(i);
+                printf("Введите количество красных карточек\n");
+                scanf("%d", &i);
+                b->change_red_cards(i);
+                printf("Введите количество желтых карточек\n");
+                scanf("%d", &i);
+                b->change_yellow_cards(i);
+                printf("Введите позицию\n");
+                scanf("%s", &pos);
+                b->change_position(pos);
+                printf("Введите национальность полевого игрока\n");
+                scanf("%s", &loc);
+                b->change_nation(loc);
+                printf("Введите вес полевого игрока\n");
+                scanf("%d", &i);
+                b->change_weight(i);
+                printf("Введите рост полевого игрока\n");
+                scanf("%d", &i);
+                b->change_height(i);
+            }
+            if (action == 2)
+            {
+                char im[50];
+                printf("Введите имя полевого игрока\n");
+                scanf("%s", &im);
+                b->change_name(im);
+            }
+            if (action == 3)
+            {
+                int i;
+                printf("Введите возраст\n");
+                scanf("%d", &i);
+                b->change_age(i);
+
+            }
+            if (action == 4)
+            {
+                int i;
+                printf("Введите количество голов полевого игрока\n");
+                scanf("%d", &i);
+                b->change_goals(i);
+            }
+            if (action == 5)
+            {
+                int i;
+                printf("Введите количество асистов полевого игрока\n");
+                scanf("%d", &i);
+                b->change_assists(i);
+            }
+            if (action == 6)
+            {
+                int i;
+                printf("Введите количество красных карточек\n");
+                scanf("%d", &i);
+                b->change_red_cards(i);
+            }
+            if (action == 7)
+            {
+                int i;
+                printf("Введите количество желтых карточек\n");
+                scanf("%d", &i);
+                b->change_yellow_cards(i);
+
+            }
+            if (action == 8)
+            {
+                char pos[15];
+                printf("Введите позицию\n");
+                scanf("%s", &pos);
+                b->change_position(pos);
+            }
+            if (action == 9)
+            {
+                char loc[50];
+                printf("Введите национальность полевого игрока\n");
+                scanf("%s", &loc);
+                b->change_nation(loc);
+            }
+            if (action == 10)
+            {
+                int i;
+                printf("Введите вес полевого игрока\n");
+                scanf("%d", &i);
+                b->change_height(i);
+
+            }
+            if (action == 11)
+            {
+                int i;
+                printf("Введите рост полевого игрока\n");
+                scanf("%d", &i);
+                b->change_height(i);
+            }
+            if (action == 12)
+            {
+                printf("%s %d %d %d %d %d %s %s %d %d\n", b->name, b->age, b->goals, b->assists, b->red_cards, b->yellow_cards, b->nation, b->position, b->weight, b->height);
+            }
+            _getch();
+            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            scanf("%d", &mode);
+        }
+        printf("Вы хотите продолжить? 1 - да, 0 - нет ");
+        scanf("%d", &check);
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int main()
@@ -623,7 +903,7 @@ int main()
     }
     if (mode == 4)
     {
-        //func4
+        func4();
     }
     if (mode == 5)
     {
