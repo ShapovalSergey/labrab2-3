@@ -16,21 +16,21 @@ struct game
 		strcpy(visitor_team,vis);
 		strcpy(result,rez);
 	};
-	void change_name(game a, char* name1)
+	void change_name( char* name1)
 	{
-		strcpy(a.league_name, name1);
+		strcpy(league_name, name1);
 	};
-	void change_home_team(game a, char* home_team1)
+	void change_home_team( char* home_team1)
 	{
-		strcpy(a.home_team, home_team1);
+		strcpy(home_team, home_team1);
 	};
-	void change_visitor_team(game a, char* visitor_team1)
+	void change_visitor_team( char* visitor_team1)
 	{
-		strcpy(a.visitor_team, visitor_team1);
+		strcpy(visitor_team, visitor_team1);
 	};
-	void change_result(game a, char* result1)
+	void change_result( char* result1)
 	{
-		strcpy(a.result, result1);
+		strcpy(result, result1);
 	};
 
 };

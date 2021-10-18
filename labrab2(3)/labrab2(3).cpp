@@ -11,9 +11,7 @@
 #include <conio.h>
 
 league a1("РПЛ",16,"2020-2021","Россия");
-team b1(a1,"Динамо", 10,9,1,15,3,"Москва");
-
-
+team b1(a1, "Динамо", 10, 9, 1, 15, 3, "Москва");
 void func1() 
 {
     int check = 1; int mode; int action ;
@@ -854,34 +852,139 @@ void func4()
     }
 };
 
+void func5() 
+{
+    int check = 1; int mode; int action;
+    while (check == 1)
+    {
+        game a;
+        printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический ");
+        scanf("%d", &mode);
+        while (mode == 1)
+        {
+            printf("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матча\n");
+            scanf("%d", &action);
+            if (action == 1)
+            {
+                char im[50];
+                printf("Введите название лиги\n");
+                scanf("%s", &im);
+                a.change_name(im);
+                printf("Введите команду - хозяев\n");
+                scanf("%s", &im);
+                a.change_home_team(im);
+                printf("Введите команду - гостей\n");
+                scanf("%s", &im);
+                a.change_visitor_team(im);
+                printf("Введите результат матч\n");
+                scanf("%s", &im);
+                a.change_result(im);
 
 
+            }
+            if (action == 2)
+            {
+                char im[50];
+                printf("Введите название лиги\n");
+                scanf("%s", &im);
+                a.change_name(im);
+            }
+            if (action == 3)
+            {
+                char im[50];
+                printf("Введите команду - хозяев\n");
+                scanf("%s", &im);
+                a.change_home_team(im);
+
+            }
+            if (action == 4)
+            {
+                char im[50];
+                printf("Введите команду - гостей\n");
+                scanf("%s", &im);
+                a.change_visitor_team(im);
+            }
+            if (action == 5)
+            {
+                char im[50];
+                printf("Введите результат матч\n");
+                scanf("%s", &im);
+                a.change_result(im);
+            }
+            if (action == 6)
+            {
+                printf("%s\n%s %s %s\n", a.league_name, a.home_team, a.result, a.visitor_team);
+            }
+            _getch();
+            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            scanf("%d", &mode);
+
+        }
+        game* b = (game*)malloc(sizeof(game));
+        while (mode == 2)
+        {
+
+            printf("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матча\n");
+            scanf("%d", &action);
+            if (action == 1)
+            {
+                char im[50];
+                printf("Введите название лиги\n");
+                scanf("%s", &im);
+                b->change_name(im);
+                printf("Введите команду - хозяев\n");
+                scanf("%s", &im);
+                b->change_home_team(im);
+                printf("Введите команду - гостей\n");
+                scanf("%s", &im);
+                b->change_visitor_team(im);
+                printf("Введите результат матч\n");
+                scanf("%s", &im);
+                b->change_result(im);
 
 
+            }
+            if (action == 2)
+            {
+                char im[50];
+                printf("Введите название лиги\n");
+                scanf("%s", &im);
+                b->change_name(im);
+            }
+            if (action == 3)
+            {
+                char im[50];
+                printf("Введите команду - хозяев\n");
+                scanf("%s", &im);
+                b->change_home_team(im);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+            if (action == 4)
+            {
+                char im[50];
+                printf("Введите команду - гостей\n");
+                scanf("%s", &im);
+                b->change_visitor_team(im);
+            }
+            if (action == 5)
+            {
+                char im[50];
+                printf("Введите результат матч\n");
+                scanf("%s", &im);
+                b->change_result(im);
+            }
+            if (action == 6)
+            {
+                printf("%s\n%s %s %s\n", b->league_name, b->home_team, b->result, b->visitor_team);
+            }
+            _getch();
+            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            scanf("%d", &mode);
+        }
+        printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
+        scanf("%d", &check);
+    }
+};
 int main()
 {
     setlocale(LC_ALL, "Russian"); int mode; int check = 1;
@@ -907,7 +1010,7 @@ int main()
     }
     if (mode == 5)
     {
-        //func5
+        func5();
     }
     printf("Вы хотите продолжить? 1 - да, 0 - нет ");
     scanf("%d",&check);
