@@ -12,6 +12,7 @@ struct team : league
 	int value_of_goalkeepers;
 	char location[50];
 	//////////////////////////func
+	team() {};
 	team(const league& a):league(a) {};
 	team(const league &a, const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1): league(a)
 	{
