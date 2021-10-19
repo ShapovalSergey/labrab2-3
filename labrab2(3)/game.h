@@ -10,6 +10,7 @@ private:
 	char result[10];
 	//////////////////////////func
 public:
+	
 	game() {};
 	game(char* name, char* rez, char* vis, char* home)
 	{
