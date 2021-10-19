@@ -991,29 +991,93 @@ void func5()
 };
 void func6()
 {
-    int mode; int check = 1;
-    game* a[4];
-    game b[2];
+    int mode; int check = 1; game* b1 = new game; game* b2 = new game;
+    game* mas = new game[2];
+    game* b[2] = {b1,b2};
     while(check==1)
     {
     printf("Выберите с чем вы хотите работать 1 - динамический массив, 2 - массив динамических объектов ");
     scanf("%d", &mode);
     while (mode == 1)
     {
+        char im[50];
+        printf("Введите название лиги\n");
+        scanf("%s", &im);
+        mas[0].change_name(im);
+        printf("Введите команду - хозяев\n");
+        scanf("%s", &im);
+        mas[0].change_home_team(im);
+        printf("Введите команду - гостей\n");
+        scanf("%s", &im);
+        mas[0].change_visitor_team(im);
+        printf("Введите результат матч\n");
+        scanf("%s", &im);
+        mas[0].change_result(im);
+        printf("\n-----------------------------------------------\n");
+        printf("Введите название лиги\n");
+        scanf("%s", &im);
+        mas[1].change_name(im);
+        printf("Введите команду - хозяев\n");
+        scanf("%s", &im);
+        mas[1].change_home_team(im);
+        printf("Введите команду - гостей\n");
+        scanf("%s", &im);
+        mas[1].change_visitor_team(im);
+        printf("Введите результат матч\n");
+        scanf("%s", &im);
+        mas[1].change_result(im);
+        printf("\n-----------------------------------------------\n");
+        printf("Вы ввели:\n");
+        printf("-----------------------------------------------\n");
+        for (int i = 0; i < 2; i++)
+        {
 
-
-
-
-
-
+            printf("%d)%s\n%s %s %s\n",i+1, mas[i].return_name(), mas[i].return_home_team(), mas[i].return_result(), mas[i].return_visitor_team());
+            printf("\n-----------------------------------------------\n");
+        }
         _getch();
         printf("Вы хотите продолжить с этим типом массива? 1 - да, 0 - нет ");
         scanf("%d", &mode);
     }
+    delete mas;
     while (mode == 2)
     {
 
+        char im[50];
+        printf("Введите название лиги\n");
+        scanf("%s", &im);
+        b[0]->change_name(im);
+        printf("Введите команду - хозяев\n");
+        scanf("%s", &im);
+        b[0]->change_home_team(im);
+        printf("Введите команду - гостей\n");
+        scanf("%s", &im);
+        b[0]->change_visitor_team(im);
+        printf("Введите результат матч\n");
+        scanf("%s", &im);
+        b[0]->change_result(im);
+        printf("\n-----------------------------------------------\n");
+        printf("Введите название лиги\n");
+        scanf("%s", &im);
+        b[1]->change_name(im);
+        printf("Введите команду - хозяев\n");
+        scanf("%s", &im);
+        b[1]->change_home_team(im);
+        printf("Введите команду - гостей\n");
+        scanf("%s", &im);
+        b[1]->change_visitor_team(im);
+        printf("Введите результат матч\n");
+        scanf("%s", &im);
+        b[1]->change_result(im);
+        printf("\n-----------------------------------------------\n");
+        printf("Вы ввели:\n");
+        printf("-----------------------------------------------\n");
+        for (int i = 0; i < 2; i++)
+        {
 
+            printf("%d)%s\n%s %s %s\n", i + 1, b[i]->return_name(), b[i]->return_home_team(),b[i]->return_result(), b[i]->return_visitor_team());
+            printf("\n-----------------------------------------------\n");
+        }
 
 
 

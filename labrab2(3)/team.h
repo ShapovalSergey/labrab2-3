@@ -62,7 +62,7 @@ public:
 	int return_value_of_field_players() { return value_of_field_players; };
 	int return_value_of_goalkeepers() { return value_of_goalkeepers; };
 	char* return_location() { return location; };
-
+	//~team();
 
 
 };

@@ -89,6 +89,6 @@ public:
 	char* return_position() { return position; };
 	int return_weight() { return weight; };
 	int return_height() { return height; };
-
+	//~field_player();
 };
 

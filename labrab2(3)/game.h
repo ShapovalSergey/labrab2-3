@@ -39,6 +39,6 @@ public:
 	char* return_home_team() { return home_team; };
 	char* return_visitor_team() { return visitor_team; };
 	char* return_result() { return result; };
-
+	//~game();
 };
 

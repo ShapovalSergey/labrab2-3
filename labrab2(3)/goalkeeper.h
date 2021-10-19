@@ -89,6 +89,6 @@ public:
 	int return_missed_balls() { return missed_balls; };
 	int return_weight() {return weight;};
 	int return_height() { return height; };
-
+	//~goalkeeper();
 };
 

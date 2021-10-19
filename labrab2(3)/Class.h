@@ -60,7 +60,7 @@ public:
 		return location;
 	};
 
-
+	//~league();
 
 
 };
