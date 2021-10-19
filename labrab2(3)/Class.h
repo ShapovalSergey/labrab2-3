@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <Windows.h>
 
-struct league
+class league
 { 
 	char name [50];
 	int value_of_teams;
