@@ -729,7 +729,7 @@ void func4()
             printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
         }
-        field_player* b = (field_player*)malloc(sizeof(field_player));
+        field_player* b = new field_player();
         while (mode == 2)
         {
             printf("Выберите, что вы хотите сделать\n1)Ввести  данные полевого игрока\n2)Изменить имя полевого игрока\n3)Изменить возраст полевого игрока\n4)Изменить количество голов полевого игрока\n5)Изменить количество асистов полевого игрока\n6)Изменить количество красных карточек\n7)Изменить количество желтых карточек\n8)Изменить позицию\n9)Изменить национальность полевого игрока\n10)Изменить вес полевого игрока\n11)Изменить рост полевого игрока\n12)Вывести данные полевого игрока\n");
@@ -849,6 +849,7 @@ void func4()
             printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
+        delete b;
         printf("Вы хотите продолжить? 1 - да, 0 - нет ");
         scanf("%d", &check);
     }
@@ -915,14 +916,14 @@ void func5()
             }
             if (action == 6)
             {
-                printf("%s\n%s %s %s\n", a.league_name, a.home_team, a.result, a.visitor_team);
+                printf("%s\n%s %s %s\n", a.return_name(), a.return_home_team(), a.return_result(), a.return_visitor_team());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
 
         }
-        game* b = (game*)malloc(sizeof(game));
+        game* b = new game();;
         while (mode == 2)
         {
 
@@ -977,12 +978,13 @@ void func5()
             }
             if (action == 6)
             {
-                printf("%s\n%s %s %s\n", b->league_name, b->home_team, b->result, b->visitor_team);
+                printf("%s\n%s %s %s\n", b->return_name(), b->return_home_team(), b->return_result(), b->return_visitor_team());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
+        delete b;
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check);
     }

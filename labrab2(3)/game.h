@@ -1,13 +1,15 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
-struct game
+class game
 {
+private:
 	char league_name[50];
 	char home_team[50];
 	char visitor_team[50];
 	char result[10];
 	//////////////////////////func
+public:
 	game() {};
 	game(char* name, char* rez, char* vis, char* home)
 	{
@@ -32,6 +34,10 @@ struct game
 	{
 		strcpy(result, result1);
 	};
+	char* return_name() { return league_name; };
+	char* return_home_team() { return home_team; };
+	char* return_visitor_team() { return visitor_team; };
+	char* return_result() { return result; };
 
 };
 

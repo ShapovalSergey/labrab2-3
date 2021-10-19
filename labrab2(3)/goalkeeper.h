@@ -80,7 +80,7 @@ public:
 	};
 	char* return_name() { return name; };
 	char* return_nation() { return nation; };
-	int return_age() {return};
+	int return_age() { return age; };
 	int return_games() { return games; };
 	int return_goals() { return goals; };
 	int return_assists() {return assists;};
