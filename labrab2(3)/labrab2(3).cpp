@@ -17,7 +17,7 @@ void func1()
     int check = 1; int mode; int action ;
     while (check == 1)
     {
-        league a; 
+        league a;
         printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический ");
         scanf("%d",&mode);
         while (mode==1)
@@ -73,14 +73,14 @@ void func1()
             }
             if (action == 6)
             {
-                printf("%s %d %s %s\n",a.name,a.value_of_teams,a.years,a.location);
+                printf("%s %d %s %s\n",a.return_name(),a.return_value(),a.return_years(),a.return_location());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
 
         }
-        league* b = (league*)malloc(sizeof(league));
+        league* b = new league();
         while (mode ==2)
         {
             
@@ -135,20 +135,21 @@ void func1()
             }
             if (action == 6)
             {
-                printf("%s %d %s %s\n", b->name, b->value_of_teams, b->years, b->location);
+                printf("%s %d %s %s\n", b->return_name(), b->return_value(), b->return_years(), b->return_location());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
-
         }
 
-
-
-
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
-        scanf("%d", &check);
+        scanf("%d", &check); 
+        if (check==0)
+        {
+            delete b;
+        }
     }
+   
 };
 
 

@@ -9,11 +9,14 @@
 
 class league
 { 
+private:
 	char name [50];
 	int value_of_teams;
 	char years[9];
 	char location[50];
 	//////////////////////////func
+public:
+	
 	league() {};
 	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
 	{
@@ -23,13 +26,6 @@ class league
 		strcpy(years, years1);
 		strcpy(location, location1);
 
-	};
-	void delete_league(league var) 
-	{
-		strcpy(var.location ,"deleted");
-		var.value_of_teams = 0;
-		strcpy(var.name, "deleted");
-		strcpy(var.years, "deleted");
 	};
 	void change_name( char* name1) 
 	{
@@ -47,6 +43,25 @@ class league
 	{
 		strcpy(location, location1);
 	};
+	char* return_name() 
+	{
+		return name;
+	};
+	int return_value() 
+	{ 
+		return value_of_teams;
+	};
+	char* return_years()
+	{
+		return years;
+	};
+	char* return_location()
+	{
+		return location;
+	};
+
+
+
 
 };
 
