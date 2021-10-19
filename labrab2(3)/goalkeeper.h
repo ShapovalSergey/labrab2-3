@@ -2,9 +2,9 @@
 #include <string.h>
 #pragma once
 #include "team.h"
-struct goalkeeper:team
+class goalkeeper:team
 {
-
+private:
 	char name[30];
 	int age;
 	int games;
@@ -17,6 +17,7 @@ struct goalkeeper:team
 	int weight;
 	int height;
 	//////////////////////////func
+public:
 	goalkeeper() {};
 	goalkeeper(const team& a) :team(a) {};
 	goalkeeper(const team &a, char* name1,int age1,int games1,int goals1, int assists1,int red1,int yellow1,int miss1, char* nation1, int weig1, int heig1 ): team(a)
@@ -77,7 +78,17 @@ struct goalkeeper:team
 	{
 		assists = assists1;
 	};
-
+	char* return_name() { return name; };
+	char* return_nation() { return nation; };
+	int return_age() {return};
+	int return_games() { return games; };
+	int return_goals() { return goals; };
+	int return_assists() {return assists;};
+	int return_red_cards() {return red_cards;};
+	int return_yellow_cards() { return yellow_cards; };
+	int return_missed_balls() { return missed_balls; };
+	int return_weight() {return weight;};
+	int return_height() { return height; };
 
 };
 

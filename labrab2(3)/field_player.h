@@ -2,9 +2,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include "team.h"
-struct field_player:team
+class field_player:team
 {
-	
+private:
 	char name[30];
 	int age;
 	int games;
@@ -17,6 +17,7 @@ struct field_player:team
 	int weight;
 	int height;
 	//////////////////////////func
+public:
 	field_player() {};
 	field_player(const team &a) :team(a){};
 	field_player(const team& a, char* name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, char* position1, char* nation1, int weig1, int heig1) : team(a)
@@ -77,6 +78,17 @@ struct field_player:team
 	{
 		assists = assists1;
 	};
+	char* return_name() { return name; };
+	char* return_nation() { return nation; };
+	int return_age() { return };
+	int return_games() { return games; };
+	int return_goals() { return goals; };
+	int return_assists() { return assists; };
+	int return_red_cards() { return red_cards; };
+	int return_yellow_cards() { return yellow_cards; };
+	char* return_position() { return position; };
+	int return_weight() { return weight; };
+	int return_height() { return height; };
 
 };
 

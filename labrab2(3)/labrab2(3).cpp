@@ -469,13 +469,13 @@ void func3()
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %d %d %d\n", a.name, a.age, a.goals, a.assists, a.red_cards, a.yellow_cards, a.nation,a.missed_balls,a.weight,a.height);
+                printf("%s %d %d %d %d %d %s %d %d %d\n", a.return_name(), a.return_age(), a.return_goals(), a.return_assists(), a.return_red_cards(), a.return_yellow_cards(), a.return_nation(),a.return_missed_balls(),a.return_weight(),a.return_height());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
         }
-        goalkeeper* b = (goalkeeper*)malloc(sizeof(goalkeeper));
+        goalkeeper* b = new goalkeeper();;
         while (mode==2)
         {
             printf("Выберите, что вы хотите сделать\n1)Ввести  данные вратаря\n2)Изменить имя вратаря\n3)Изменить возраст вратаря\n4)Изменить количество голов вратаря\n5)Изменить количество асистов вратаря\n6)Изменить количество красных карточек\n7)Изменить количество желтых карточек\n8)Изменить количество пропущенных мячей\n9)Изменить национальность вратаря\n10)Изменить вес вратаря\n11)Изменить рост вратаря\n12)Вывести данные вратаря\n");
@@ -589,12 +589,13 @@ void func3()
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %d %d %d\n", b->name, b->age, b->goals, b->assists, b->red_cards, b->yellow_cards, b->nation, b->missed_balls, b->weight, b->height);
+                printf("%s %d %d %d %d %d %s %d %d %d\n", b->return_name(), b->return_age(), b->return_goals(), b->return_assists(), b->return_red_cards(), b->return_yellow_cards(), b->return_nation(), b->return_missed_balls(), b->return_weight(), b->return_height());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
+        delete b;
     printf("Вы хотите продолжить? 1 - да, 0 - нет ");
     scanf("%d", &check);
 }
@@ -722,7 +723,7 @@ void func4()
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %s %d %d\n", a.name, a.age, a.goals, a.assists, a.red_cards, a.yellow_cards, a.nation, a.position, a.weight, a.height);
+                printf("%s %d %d %d %d %d %s %s %d %d\n", a.return_name(), a.return_age(), a.return_goals(), a.return_assists(), a.return_red_cards(), a.return_yellow_cards(), a.return_nation(), a.return_position(), a.return_weight(), a.return_height());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
@@ -842,7 +843,7 @@ void func4()
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %s %d %d\n", b->name, b->age, b->goals, b->assists, b->red_cards, b->yellow_cards, b->nation, b->position, b->weight, b->height);
+                printf("%s %d %d %d %d %d %s %s %d %d\n", b->return_name(), b->return_age(), b->return_goals(), b->return_assists(), b->return_red_cards(), b->return_yellow_cards(), b->return_nation(), b->return_position(), b->return_weight(), b->return_height());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
