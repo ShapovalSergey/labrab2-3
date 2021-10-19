@@ -144,10 +144,8 @@ void func1()
 
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check); 
-        if (check==0)
-        {
-            delete b;
-        }
+        delete b;
+        
     }
    
 };
@@ -245,14 +243,14 @@ void func2()
             }
             if (action == 9)
             {
-                printf("%s %d %d %d %d %d %s \n", a.name, a.wins, a.defeats, a.draws,a.value_of_field_players,a.value_of_goalkeepers,a.location);
+                printf("%s %d %d %d %d %d %s \n", a.return_name(), a.return_wins(), a.return_defeats(), a.return_draws(),a.return_value_of_field_players(),a.return_value_of_goalkeepers(),a.return_location());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
 
         }
-        team* b = (team*)malloc(sizeof(team));
+        team* b = new team();
         while (mode == 2)
         {
             printf("Выберите, что вы хотите сделать\n1)Ввести данные команды\n2)Изменить название команды\n3)Изменить количество побед команды\n4)Изменить количество поражений команды\n5)Изменить количество ничьих команды\n6)Изменить количество полевых игроков\n7)Изменить количество вратарей\n8)Изменить город команды\n9)Вывести данные команды\n");
@@ -336,7 +334,7 @@ void func2()
             }
             if (action == 9)
             {
-                printf("%s %d %d %d %d %d %s \n", b->name, b->wins, b->defeats, b->draws, b->value_of_field_players, b->value_of_goalkeepers,b->location);
+                printf("%s %d %d %d %d %d %s \n", b->return_name(), b->return_wins(), b->return_defeats(), b->return_draws(), b->return_value_of_field_players(), b->return_value_of_goalkeepers(),b->return_location());
             }
             _getch();
             printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
@@ -344,6 +342,8 @@ void func2()
         }
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check);
+        delete b;
+        
     }
 };
 
