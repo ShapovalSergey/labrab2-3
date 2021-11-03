@@ -53,8 +53,5 @@ struct team : league
 	{
 		strcpy(location, location1);
 	};
-
-
-
 };
 
