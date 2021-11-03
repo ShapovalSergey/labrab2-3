@@ -12,7 +12,7 @@ class league
 private:
 	char name [50];
 	int value_of_teams;
-	char years[9];
+	char years[15];
 	char location[50];
 	//////////////////////////func
 public:
