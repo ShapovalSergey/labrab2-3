@@ -25,7 +25,7 @@ void func1()
             scanf("%d",&action);
             if (action ==1)
             {
-                char im[50],loc[50],season[9]; int i;
+                char im[50],loc[50],season[15]; int i;
                 printf("Введите название лиги\n");
                 scanf("%s",&im);
                 league_change_name(&a,im);
@@ -58,7 +58,7 @@ void func1()
             }
             if (action == 4)
             {
-                char season[9];
+                char season[15];
                 printf("Введите сезон лиги\n");
                 scanf("%s", &season);
                 league_change_years(&a,season);
@@ -87,7 +87,7 @@ void func1()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50], season[9]; int i;
+                char im[50], loc[50], season[15]; int i;
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
                 league_change_name(b,im);
@@ -120,7 +120,7 @@ void func1()
             }
             if (action == 4)
             {
-                char season[9];
+                char season[15];
                 printf("Введите сезон лиги\n");
                 scanf("%s", &season);
                 league_change_years(b, season);

@@ -11,7 +11,7 @@ struct league
 { 
 	char name [50];
 	int value_of_teams;
-	char years[9];
+	char years[15];
 	char location[50];
 	league() {};
 	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
