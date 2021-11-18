@@ -10,8 +10,7 @@
 #include <iostream>
 #include <conio.h>
 
-league a1("РПЛ",16,"2020-2021","Россия");
-team b1(a1, "Динамо", 10, 9, 1, 15, 3, "Москва");
+
 void func1() 
 {
     int check = 1; int mode; int action ;
@@ -29,16 +28,16 @@ void func1()
                 char im[50],loc[50],season[9]; int i;
                 printf("Введите название лиги\n");
                 scanf("%s",&im);
-                a.change_name(im);
+                league_change_name(&a,im);
                 printf("Введите количество команд\n");
                 scanf("%d",&i);
-                a.change_value(i);
+                league_change_value(&a,i);
                 printf("Введите сезон лиги\n");
                 scanf("%s",&season);
-                a.change_years( season);
+                league_change_years(&a, season);
                 printf("Введите страну лиги\n");
                 scanf("%s",&loc);
-                a.change_loc(loc);
+                league_change_loc(&a,loc);
                
                 
             }
@@ -47,14 +46,14 @@ void func1()
                 char im[50];
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                league_change_name(&a,im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите количество команд\n");
                 scanf("%d", &i);
-                a.change_value(i);
+                league_change_value(&a,i);
 
             }
             if (action == 4)
@@ -62,14 +61,14 @@ void func1()
                 char season[9];
                 printf("Введите сезон лиги\n");
                 scanf("%s", &season);
-                a.change_years(season);
+                league_change_years(&a,season);
             }
             if (action == 5)
             {
                 char  loc[50];
                 printf("Введите страну лиги\n");
                 scanf("%s", &loc);
-                a.change_loc(loc);
+                league_change_loc(&a,loc);
             }
             if (action == 6)
             {
@@ -91,16 +90,16 @@ void func1()
                 char im[50], loc[50], season[9]; int i;
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                league_change_name(b,im);
                 printf("Введите количество команд\n");
                 scanf("%d", &i);
-                b->change_value(i);
+                league_change_value(b,i);
                 printf("Введите сезон лиги\n");
                 scanf("%s", &season);
-                b->change_years(season);
+                league_change_years(b, season);
                 printf("Введите страну лиги\n");
                 scanf("%s", &loc);
-                b->change_loc(loc);
+                league_change_loc(b, loc);
 
 
             }
@@ -109,14 +108,14 @@ void func1()
                 char im[50];
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                league_change_name(b, im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите количество команд\n");
                 scanf("%d", &i);
-                b->change_value(i);
+                league_change_value(b, i);
 
             }
             if (action == 4)
@@ -124,14 +123,14 @@ void func1()
                 char season[9];
                 printf("Введите сезон лиги\n");
                 scanf("%s", &season);
-                b->change_years(season);
+                league_change_years(b, season);
             }
             if (action == 5)
             {
                 char  loc[50];
                 printf("Введите страну лиги\n");
                 scanf("%s", &loc);
-                b->change_loc(loc);
+                league_change_loc(b, loc);
             }
             if (action == 6)
             {
@@ -157,7 +156,7 @@ void func2()
     int check = 1; int mode; int action;
     while (check == 1)
     {
-        team a(a1);
+        team a;
         printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический ");
         scanf("%d", &mode);
         while (mode == 1)
@@ -169,25 +168,25 @@ void func2()
                 char im[50], loc[50]; int i;
                 printf("Введите название команды\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                team_change_name(&a,im);
                 printf("Введите количество побед\n");
                 scanf("%d", &i);
-                a.change_wins(i);
+                team_change_wins(&a,i);
                 printf("Введите количество поражений\n");
                 scanf("%d", &i);
-                a.change_defeats(i);
+                team_change_defeats(&a,i);
                 printf("Введите количество ничьих\n");
                 scanf("%d", &i);
-                a.change_draws(i);
+                team_change_draws(&a,i);
                 printf("Введите количество полевых игроков\n");
                 scanf("%d", &i);
-                a.change_value_of_field_players(i);
+                team_change_value_of_field_players(&a,i);
                 printf("Введите количество вратарей\n");
                 scanf("%d", &i);
-                a.change_value_of_goalkeepers(i);
+                team_change_value_of_goalkeepers(&a,i);
                 printf("Введите город команды\n");
                 scanf("%s", &loc);
-                a.change_location(loc);
+                team_change_location(&a,loc);
 
 
             }
@@ -196,14 +195,14 @@ void func2()
                 char im[50];
                 printf("Введите название команды\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                team_change_name(&a,im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите количество побед\n");
                 scanf("%d", &i);
-                a.change_wins(i);
+                team_change_wins(&a, i);
 
             }
             if (action == 4)
@@ -211,28 +210,28 @@ void func2()
                 int i;
                 printf("Введите количество поражений\n");
                 scanf("%d", &i);
-                a.change_defeats(i);
+                team_change_defeats(&a, i);
             }
             if (action == 5)
             {
                 int i;
                 printf("Введите количество ничьих\n");
                 scanf("%d", &i);
-                a.change_draws(i);
+                team_change_draws(&a, i);
             }
             if (action == 6)
             {
                 int i;
                 printf("Введите количество полевых игроков\n");
                 scanf("%d", &i);
-                a.change_value_of_field_players(i);
+                team_change_value_of_field_players(&a, i);
             }
             if (action == 7)
             {
                 int i;
                 printf("Введите количество вратарей\n");
                 scanf("%d", &i);
-                a.change_value_of_goalkeepers(i);
+                team_change_value_of_goalkeepers(&a, i);
 
             }
             if (action == 8)
@@ -240,7 +239,7 @@ void func2()
                 char loc[50];
                 printf("Введите город команды\n");
                 scanf("%s", &loc);
-                a.change_location(loc);
+                team_change_location(&a, loc);
             }
             if (action == 9)
             {
@@ -261,25 +260,25 @@ void func2()
                 char im[50], loc[50]; int i;
                 printf("Введите название команды\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                team_change_name(b,im);
                 printf("Введите количество побед\n");
                 scanf("%d", &i);
-                b->change_wins(i);
+                team_change_wins(b, i);
                 printf("Введите количество поражений\n");
                 scanf("%d", &i);
-                b->change_defeats(i);
+                team_change_defeats(b, i);
                 printf("Введите количество ничьих\n");
                 scanf("%d", &i);
-                b->change_draws(i);
+                team_change_draws(b, i);
                 printf("Введите количество полевых игроков\n");
                 scanf("%d", &i);
-                b->change_value_of_field_players(i);
+                team_change_value_of_field_players(b, i);
                 printf("Введите количество вратарей\n");
                 scanf("%d", &i);
-                b->change_value_of_goalkeepers(i);
+                team_change_value_of_goalkeepers(b, i);
                 printf("Введите город команды\n");
                 scanf("%s", &loc);
-                b->change_location(loc);
+                team_change_location(b, loc);
 
 
             }
@@ -288,14 +287,14 @@ void func2()
                 char im[50];
                 printf("Введите название команды\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                team_change_name(b, im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите количество побед\n");
                 scanf("%d", &i);
-                b->change_wins(i);
+                team_change_wins(b, i);
 
             }
             if (action == 4)
@@ -303,35 +302,35 @@ void func2()
                 int i;
                 printf("Введите количество поражений\n");
                 scanf("%d", &i);
-                b->change_defeats(i);
+                team_change_defeats(b, i);
             }
             if (action == 5)
             {
                 int i;
                 printf("Введите количество ничьих\n");
                 scanf("%d", &i);
-                b->change_draws(i);
+                team_change_draws(b, i);
             }
             if (action == 6)
             {
                 int i;
                 printf("Введите количество полевых игроков\n");
                 scanf("%d", &i);
-                b->change_value_of_field_players(i);
+                team_change_value_of_field_players(b, i);
             }
             if (action == 7)
             {
                 int i;
                 printf("Введите количество вратарей\n");
                 scanf("%d", &i);
-                b->change_value_of_goalkeepers(i);
+                team_change_value_of_goalkeepers(b, i);
             }
             if (action == 8)
             {
                 char loc[50];
                 printf("Введите город команды\n");
                 scanf("%s", &loc);
-                b->change_location(loc);
+                team_change_location(b, loc);
             }
             if (action == 9)
             {
@@ -363,48 +362,48 @@ void func3()
                 char im[50], loc[50]; int i;
                 printf("Введите имя вратаря\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                gp_change_name(&a,im);
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                a.change_age(i);
+                gp_change_age(&a, i);
                 printf("Введите количество голов вратаря\n");
                 scanf("%d", &i);
-                a.change_goals(i);
+                gp_change_goals(&a, i);
                 printf("Введите количество асистов вратаря\n");
                 scanf("%d", &i);
-                a.change_assists(i);
+                gp_change_assists(&a, i);
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                a.change_red_cards(i);
+                gp_change_red_cards(&a, i);
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                a.change_yellow_cards(i);
+                gp_change_yellow_cards(&a, i);
                 printf("Введите количество пропущенных мячей\n");
                 scanf("%d", &i);
-                a.change_missed_balls(i);
+                gp_change_missed_balls(&a, i);
                 printf("Введите национальность вратаря\n");
                 scanf("%s", &loc);
-                a.change_nation(loc);
+                gp_change_nation(&a, loc);
                 printf("Введите вес вратаря\n");
                 scanf("%d", &i);
-                a.change_weight(i);
+                gp_change_weight(&a, i);
                 printf("Введите рост вратаря\n");
                 scanf("%d", &i);
-                a.change_height(i);
+                gp_change_height(&a, i);
             }
             if (action == 2)
             {
                 char im[50];
                 printf("Введите имя вратаря\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                gp_change_name(&a, im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                a.change_age(i);
+                gp_change_age(&a, i);
 
             }
             if (action == 4)
@@ -412,28 +411,28 @@ void func3()
                 int i;
                 printf("Введите количество голов вратаря\n");
                 scanf("%d", &i);
-                a.change_goals(i);
+                gp_change_goals(&a, i);
             }
             if (action == 5)
             {
                 int i;
                 printf("Введите количество асистов вратаря\n");
                 scanf("%d", &i);
-                a.change_assists(i);
+                gp_change_assists(&a, i);
             }
             if (action == 6)
             {
                 int i;
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                a.change_red_cards(i);
+                gp_change_red_cards(&a, i);
             }
             if (action == 7)
             {
                 int i;
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                a.change_yellow_cards(i);
+                gp_change_yellow_cards(&a, i);
 
             }
             if (action == 8)
@@ -441,21 +440,21 @@ void func3()
                 int i;
                 printf("Введите количество пропущенных мячей\n");
                 scanf("%d", &i);
-                a.change_missed_balls(i);
+                gp_change_missed_balls(&a, i);
             }
             if (action==9)
             {
                 char loc[50];
                 printf("Введите национальность вратаря\n");
                 scanf("%s", &loc);
-                a.change_nation(loc);
+                gp_change_nation(&a, loc);
             }
             if (action == 10)
             {
                 int i;
                 printf("Введите вес вратаря\n");
                 scanf("%d", &i);
-                a.change_height(i);
+                gp_change_height(&a, i);
 
             }
             if (action == 11)
@@ -463,7 +462,7 @@ void func3()
                 int i;
                 printf("Введите рост вратаря\n");
                 scanf("%d", &i);
-                a.change_height(i);
+                gp_change_height(&a, i);
 
             }
             if (action == 12)
@@ -484,48 +483,48 @@ void func3()
                 char im[50], loc[50]; int i;
                 printf("Введите имя вратаря\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                gp_change_name(b, im);
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                b->change_age(i);
+                gp_change_age(b, i);
                 printf("Введите количество голов вратаря\n");
                 scanf("%d", &i);
-                b->change_goals(i);
+                gp_change_goals(b, i);
                 printf("Введите количество асистов вратаря\n");
                 scanf("%d", &i);
-                b->change_assists(i);
+                gp_change_assists(b, i);
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                b->change_red_cards(i);
+                gp_change_red_cards(b, i);
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                b->change_yellow_cards(i);
+                gp_change_yellow_cards(b, i);
                 printf("Введите количество пропущенных мячей\n");
                 scanf("%d", &i);
-                b->change_missed_balls(i);
+                gp_change_missed_balls(b, i);
                 printf("Введите национальность вратаря\n");
                 scanf("%s", &loc);
-                b->change_nation(loc);
+                gp_change_nation(b, loc);
                 printf("Введите вес вратаря\n");
                 scanf("%d", &i);
-                b->change_weight(i);
+                gp_change_weight(b, i);
                 printf("Введите рост вратаря\n");
                 scanf("%d", &i);
-                b->change_height(i);
+                gp_change_height(b, i);
             }
             if (action == 2)
             {
                 char im[50];
                 printf("Введите имя вратаря\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                gp_change_name(b, im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                b->change_age(i);
+                gp_change_age(b, i);
 
             }
             if (action == 4)
@@ -533,28 +532,28 @@ void func3()
                 int i;
                 printf("Введите количество голов вратаря\n");
                 scanf("%d", &i);
-                b->change_goals(i);
+                gp_change_goals(b, i);
             }
             if (action == 5)
             {
                 int i;
                 printf("Введите количество асистов вратаря\n");
                 scanf("%d", &i);
-                b->change_assists(i);
+                gp_change_assists(b, i);
             }
             if (action == 6)
             {
                 int i;
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                b->change_red_cards(i);
+                gp_change_red_cards(b, i);
             }
             if (action == 7)
             {
                 int i;
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                b->change_yellow_cards(i);
+                gp_change_yellow_cards(b, i);
 
             }
             if (action == 8)
@@ -562,21 +561,21 @@ void func3()
                 int i;
                 printf("Введите количество пропущенных мячей\n");
                 scanf("%d", &i);
-                b->change_missed_balls(i);
+                gp_change_missed_balls(b, i);
             }
             if (action == 9)
             {
                 char loc[50];
                 printf("Введите национальность вратаря\n");
                 scanf("%s", &loc);
-                b->change_nation(loc);
+                gp_change_nation(b, loc);
             }
             if (action == 10)
             {
                 int i;
                 printf("Введите вес вратаря\n");
                 scanf("%d", &i);
-                b->change_height(i);
+                gp_change_height(b, i);
 
             }
             if (action == 11)
@@ -584,7 +583,7 @@ void func3()
                 int i;
                 printf("Введите рост вратаря\n");
                 scanf("%d", &i);
-                b->change_height(i);
+                gp_change_height(b,i);
             }
             if (action == 12)
             {
@@ -616,48 +615,48 @@ void func4()
                 char im[50], loc[50]; int i; char pos[15];
                 printf("Введите имя полевого игрока\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                fp_change_name(&a,im);
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                a.change_age(i);
+                fp_change_age(&a, i);
                 printf("Введите количество голов полевого игрока\n");
                 scanf("%d", &i);
-                a.change_goals(i);
+                fp_change_goals(&a, i);
                 printf("Введите количество асистов полевого игрока\n");
                 scanf("%d", &i);
-                a.change_assists(i);
+                fp_change_assists(&a, i);
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                a.change_red_cards(i);
+                fp_change_red_cards(&a, i);
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                a.change_yellow_cards(i);
+                fp_change_yellow_cards(&a, i);
                 printf("Введите позицию\n");
                 scanf("%s", &pos);
-                a.change_position(pos);
+                fp_change_position(&a, pos);
                 printf("Введите национальность полевого игрока\n");
                 scanf("%s", &loc);
-                a.change_nation(loc);
+                fp_change_nation(&a, loc);
                 printf("Введите вес полевого игрока\n");
                 scanf("%d", &i);
-                a.change_weight(i);
+                fp_change_weight(&a, i);
                 printf("Введите рост полевого игрока\n");
                 scanf("%d", &i);
-                a.change_height(i);
+                fp_change_height(&a, i);
             }
             if (action == 2)
             {
                 char im[50];
                 printf("Введите имя полевого игрока\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                fp_change_name(&a, im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                a.change_age(i);
+                fp_change_age(&a, i);
 
             }
             if (action == 4)
@@ -665,28 +664,28 @@ void func4()
                 int i;
                 printf("Введите количество голов полевого игрока\n");
                 scanf("%d", &i);
-                a.change_goals(i);
+                fp_change_goals(&a, i);
             }
             if (action == 5)
             {
                 int i;
                 printf("Введите количество асистов полевого игрока\n");
                 scanf("%d", &i);
-                a.change_assists(i);
+                fp_change_assists(&a, i);
             }
             if (action == 6)
             {
                 int i;
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                a.change_red_cards(i);
+                fp_change_red_cards(&a, i);
             }
             if (action == 7)
             {
                 int i;
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                a.change_yellow_cards(i);
+                fp_change_yellow_cards(&a, i);
 
             }
             if (action == 8)
@@ -694,21 +693,21 @@ void func4()
                 char pos[15];
                 printf("Введите позицию\n");
                 scanf("%s", &pos);
-                a.change_position(pos);
+                fp_change_position(&a, pos);
             }
             if (action == 9)
             {
                 char loc[50];
                 printf("Введите национальность полевого игрока\n");
                 scanf("%s", &loc);
-                a.change_nation(loc);
+                fp_change_nation(&a, loc);
             }
             if (action == 10)
             {
                 int i;
                 printf("Введите вес полевого игрока\n");
                 scanf("%d", &i);
-                a.change_height(i);
+                fp_change_height(&a, i);
 
             }
             if (action == 11)
@@ -716,7 +715,7 @@ void func4()
                 int i;
                 printf("Введите рост полевого игрока\n");
                 scanf("%d", &i);
-                a.change_height(i);
+                fp_change_height(&a, i);
 
             }
             if (action == 12)
@@ -737,48 +736,48 @@ void func4()
                 char im[50], loc[50]; int i;char pos[15];
                 printf("Введите имя полевого игрока\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                fp_change_name(b,im);
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                b->change_age(i);
+                fp_change_age(b, i);
                 printf("Введите количество голов полевого игрока\n");
                 scanf("%d", &i);
-                b->change_goals(i);
+                fp_change_goals(b, i);
                 printf("Введите количество асистов полевого игрока\n");
                 scanf("%d", &i);
-                b->change_assists(i);
+                fp_change_assists(b, i);
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                b->change_red_cards(i);
+                fp_change_red_cards(b, i);
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                b->change_yellow_cards(i);
+                fp_change_yellow_cards(b, i);
                 printf("Введите позицию\n");
                 scanf("%s", &pos);
-                b->change_position(pos);
+                fp_change_position(b, pos);
                 printf("Введите национальность полевого игрока\n");
                 scanf("%s", &loc);
-                b->change_nation(loc);
+                fp_change_nation(b, loc);
                 printf("Введите вес полевого игрока\n");
                 scanf("%d", &i);
-                b->change_weight(i);
+                fp_change_weight(b, i);
                 printf("Введите рост полевого игрока\n");
                 scanf("%d", &i);
-                b->change_height(i);
+                fp_change_height(b, i);
             }
             if (action == 2)
             {
                 char im[50];
                 printf("Введите имя полевого игрока\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                fp_change_name(b, im);
             }
             if (action == 3)
             {
                 int i;
                 printf("Введите возраст\n");
                 scanf("%d", &i);
-                b->change_age(i);
+                fp_change_age(b, i);
 
             }
             if (action == 4)
@@ -786,28 +785,28 @@ void func4()
                 int i;
                 printf("Введите количество голов полевого игрока\n");
                 scanf("%d", &i);
-                b->change_goals(i);
+                fp_change_goals(b, i);
             }
             if (action == 5)
             {
                 int i;
                 printf("Введите количество асистов полевого игрока\n");
                 scanf("%d", &i);
-                b->change_assists(i);
+                fp_change_assists(b, i);
             }
             if (action == 6)
             {
                 int i;
                 printf("Введите количество красных карточек\n");
                 scanf("%d", &i);
-                b->change_red_cards(i);
+                fp_change_red_cards(b, i);
             }
             if (action == 7)
             {
                 int i;
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
-                b->change_yellow_cards(i);
+                fp_change_yellow_cards(b, i);
 
             }
             if (action == 8)
@@ -815,21 +814,21 @@ void func4()
                 char pos[15];
                 printf("Введите позицию\n");
                 scanf("%s", &pos);
-                b->change_position(pos);
+                fp_change_position(b, pos);
             }
             if (action == 9)
             {
                 char loc[50];
                 printf("Введите национальность полевого игрока\n");
                 scanf("%s", &loc);
-                b->change_nation(loc);
+                fp_change_nation(b, loc);
             }
             if (action == 10)
             {
                 int i;
                 printf("Введите вес полевого игрока\n");
                 scanf("%d", &i);
-                b->change_height(i);
+                fp_change_height(b, i);
 
             }
             if (action == 11)
@@ -837,7 +836,7 @@ void func4()
                 int i;
                 printf("Введите рост полевого игрока\n");
                 scanf("%d", &i);
-                b->change_height(i);
+                fp_change_height(b, i);
             }
             if (action == 12)
             {
@@ -869,16 +868,16 @@ void func5()
                 char im[50];
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                game_change_name(&a,im);
                 printf("Введите команду - хозяев\n");
                 scanf("%s", &im);
-                a.change_home_team(im);
+                game_change_home_team(&a, im);
                 printf("Введите команду - гостей\n");
                 scanf("%s", &im);
-                a.change_visitor_team(im);
+                game_change_visitor_team(&a, im);
                 printf("Введите результат матч\n");
                 scanf("%s", &im);
-                a.change_result(im);
+                game_change_result(&a, im);
 
 
             }
@@ -887,14 +886,14 @@ void func5()
                 char im[50];
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                a.change_name(im);
+                game_change_name(&a, im);
             }
             if (action == 3)
             {
                 char im[50];
                 printf("Введите команду - хозяев\n");
                 scanf("%s", &im);
-                a.change_home_team(im);
+                game_change_home_team(&a, im);
 
             }
             if (action == 4)
@@ -902,14 +901,14 @@ void func5()
                 char im[50];
                 printf("Введите команду - гостей\n");
                 scanf("%s", &im);
-                a.change_visitor_team(im);
+                game_change_visitor_team(&a, im);
             }
             if (action == 5)
             {
                 char im[50];
                 printf("Введите результат матч\n");
                 scanf("%s", &im);
-                a.change_result(im);
+                game_change_result(&a, im);
             }
             if (action == 6)
             {
@@ -931,16 +930,16 @@ void func5()
                 char im[50];
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                game_change_name(b,im);
                 printf("Введите команду - хозяев\n");
                 scanf("%s", &im);
-                b->change_home_team(im);
+                game_change_home_team(b, im);
                 printf("Введите команду - гостей\n");
                 scanf("%s", &im);
-                b->change_visitor_team(im);
+                game_change_visitor_team(b, im);
                 printf("Введите результат матч\n");
                 scanf("%s", &im);
-                b->change_result(im);
+                game_change_result(b, im);
 
 
             }
@@ -949,14 +948,14 @@ void func5()
                 char im[50];
                 printf("Введите название лиги\n");
                 scanf("%s", &im);
-                b->change_name(im);
+                game_change_name(b, im);
             }
             if (action == 3)
             {
                 char im[50];
                 printf("Введите команду - хозяев\n");
                 scanf("%s", &im);
-                b->change_home_team(im);
+                game_change_home_team(b, im);
 
             }
             if (action == 4)
@@ -964,14 +963,14 @@ void func5()
                 char im[50];
                 printf("Введите команду - гостей\n");
                 scanf("%s", &im);
-                b->change_visitor_team(im);
+                game_change_visitor_team(b, im);
             }
             if (action == 5)
             {
                 char im[50];
                 printf("Введите результат матч\n");
                 scanf("%s", &im);
-                b->change_result(im);
+                game_change_result(b, im);
             }
             if (action == 6)
             {
@@ -1019,3 +1018,165 @@ int main()
 }
 
 
+void delete_league(league *var)
+{
+    strcpy(var->location, "deleted");
+    var->value_of_teams = 0;
+    strcpy(var->name, "deleted");
+    strcpy(var->years, "deleted");
+};
+void league_change_name(league *var, char* name1)
+{
+    strcpy(var->name, name1);
+};
+void league_change_value(league *var, int value)
+{
+    var->value_of_teams = value;
+};
+void league_change_years(league *var, char* years1)
+{
+    strcpy(var->years, years1);
+};
+void league_change_loc(league *var, char* location1)
+{
+    strcpy(var->location, location1);
+};
+
+
+void game_change_name(game *a, char* name1)
+{
+    strcpy(a->league_name, name1);
+};
+void game_change_home_team(game *a, char* home_team1)
+{
+    strcpy(a->home_team, home_team1);
+};
+void game_change_visitor_team(game *a, char* visitor_team1)
+{
+    strcpy(a->visitor_team, visitor_team1);
+};
+void game_change_result(game *a, char* result1)
+{
+    strcpy(a->result, result1);
+};
+
+
+void gp_change_name(goalkeeper *a, char* name1)
+{
+    strcpy(a->name, name1);
+};
+void gp_change_nation(goalkeeper *a, char* nation1)
+{
+    strcpy(a->nation, nation1);
+};
+void gp_change_games(goalkeeper *a, int games1)
+{
+    a->games = games1;
+};
+void gp_change_goals(goalkeeper *a, int goals1)
+{
+    a->goals = goals1;
+};
+void gp_change_age(goalkeeper *a, int age1)
+{
+    a->age = age1;
+};
+void gp_change_red_cards(goalkeeper *a, int red_cards1)
+{
+    a->red_cards = red_cards1;
+};
+void gp_change_yellow_cards(goalkeeper *a, int yellow_cards1)
+{
+    a->yellow_cards = yellow_cards1;
+};
+void gp_change_missed_balls(goalkeeper *a, int missed_balls1)
+{
+    a->missed_balls = missed_balls1;
+};
+void gp_change_weight(goalkeeper *a, int weight1)
+{
+    a->weight = weight1;
+};
+void gp_change_height(goalkeeper *a, int height1)
+{
+    a->height = height1;
+};
+void gp_change_assists(goalkeeper *a, int assists1)
+{
+    a->assists = assists1;
+};
+
+
+void fp_change_name(field_player *a, char* name1)
+{
+    strcpy(a->name, name1);
+};
+void fp_change_position(field_player *a, char* position1)
+{
+    strcpy(a->position, position1);
+};
+void fp_change_nation(field_player *a, char* nation1)
+{
+    strcpy(a->nation, nation1);
+};
+void fp_change_games(field_player *a, int games1)
+{
+    a->games = games1;
+};
+void fp_change_goals(field_player *a, int goals1)
+{
+    a->goals = goals1;
+};
+void fp_change_age(field_player *a, int age1)
+{
+    a->age = age1;
+};
+void fp_change_red_cards(field_player *a, int red_cards1)
+{
+    a->red_cards = red_cards1;
+};
+void fp_change_yellow_cards(field_player *a, int yellow_cards1)
+{
+    a->yellow_cards = yellow_cards1;
+};
+void fp_change_weight(field_player *a, int weight1)
+{
+    a->weight = weight1;
+};
+void fp_change_height(field_player *a, int height1)
+{
+    a->height = height1;
+};
+void fp_change_assists(field_player *a, int assists1)
+{
+    a->assists = assists1;
+};
+
+void team_change_name(team *a, char* name1)
+{
+    strcpy(a->name, name1);
+};
+void team_change_defeats(team *a, int defeats1)
+{
+    a->defeats = defeats1;
+};
+void team_change_draws(team *a, int draws1)
+{
+    a->draws = draws1;
+};
+void team_change_value_of_field_players(team *a, int value_of_field_players1)
+{
+    a->value_of_field_players = value_of_field_players1;
+};
+void team_change_value_of_goalkeepers(team *a, int value_of_goalkeepers1)
+{
+    a->value_of_goalkeepers = value_of_goalkeepers1;
+};
+void team_change_wins(team *a, int wins1)
+{
+    a->wins = wins1;
+};
+void team_change_location(team *a, char* location1)
+{
+    strcpy(a->location, location1);
+};

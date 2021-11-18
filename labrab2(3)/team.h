@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include "Class.h"
-struct team : league
+struct team 
 {
 	char name[50];
 	int wins;
@@ -11,50 +11,13 @@ struct team : league
 	int value_of_field_players;
 	int value_of_goalkeepers;
 	char location[50];
-	//////////////////////////func
 	team() {};
-	team(const league& a):league(a) {};
-	team(const league &a, const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1): league(a)
-	{
-		
-		strcpy(name,name1);
-		wins = wins1;
-		defeats = defeats1;
-		draws = draws1;
-		value_of_field_players = val_of_fp;
-		value_of_goalkeepers = val_of_gk;
-		strcpy(location,location1);
-	};
-	void change_name(char* name1)
-	{
-		strcpy(name,name1);
-	};
-	void change_defeats( int defeats1)
-	{
-		defeats = defeats1;
-	};
-	void change_draws( int draws1)
-	{
-		draws = draws1;
-	};
-	void change_value_of_field_players( int value_of_field_players1)
-	{
-		value_of_field_players = value_of_field_players1;
-	};
-	void change_value_of_goalkeepers( int value_of_goalkeepers1)
-	{
-		value_of_goalkeepers = value_of_goalkeepers1;
-	};
-	void change_wins( int wins1)
-	{
-		wins = wins1;
-	};
-	void change_location(char* location1)
-	{
-		strcpy(location, location1);
-	};
-
-
-
 };
 
+void team_change_name(team *a, char* name1);
+void team_change_defeats(team *a, int defeats1);
+void team_change_draws(team *a, int draws1);
+void team_change_value_of_field_players(team *a, int value_of_field_players1);
+void team_change_value_of_goalkeepers(team *a, int value_of_goalkeepers1);
+void team_change_wins(team *a, int wins1);
+void team_change_location(team *a, char* location1);

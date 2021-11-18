@@ -7,7 +7,6 @@ struct game
 	char home_team[50];
 	char visitor_team[50];
 	char result[10];
-	//////////////////////////func
 	game() {};
 	game(char* name, char* rez, char* vis, char* home)
 	{
@@ -16,22 +15,9 @@ struct game
 		strcpy(visitor_team,vis);
 		strcpy(result,rez);
 	};
-	void change_name( char* name1)
-	{
-		strcpy(league_name, name1);
-	};
-	void change_home_team( char* home_team1)
-	{
-		strcpy(home_team, home_team1);
-	};
-	void change_visitor_team( char* visitor_team1)
-	{
-		strcpy(visitor_team, visitor_team1);
-	};
-	void change_result( char* result1)
-	{
-		strcpy(result, result1);
-	};
-
+	
 };
-
+void game_change_name(game *a, char* name1);
+void game_change_home_team(game *a, char* home_team1);
+void game_change_visitor_team(game *a, char* visitor_team1);
+void game_change_result(game *a, char* result1);

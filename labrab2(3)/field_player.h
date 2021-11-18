@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include "team.h"
-struct field_player:team
+struct field_player
 {
 	
 	char name[30];
@@ -16,67 +16,17 @@ struct field_player:team
 	char nation[30];
 	int weight;
 	int height;
-	//////////////////////////func
 	field_player() {};
-	field_player(const team &a) :team(a){};
-	field_player(const team& a, char* name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, char* position1, char* nation1, int weig1, int heig1) : team(a)
-	{
-		strcpy(name, name1);
-		strcpy(nation, nation1);
-		age = age1;
-		games = games1;
-		goals = goals1;
-		assists = assists1;
-		red_cards = red1;
-		yellow_cards = yellow1;
-		strcpy(position,position1);
-		weight = weig1;
-		height = heig1;
-	};
-	void change_name( char* name1)
-	{
-		strcpy(name, name1);
-	};
-	void change_position( char* position1)
-	{
-		strcpy(position, position1);
-	};
-	void change_nation( char* nation1)
-	{
-		strcpy(nation, nation1);
-	};
-	void change_games( int games1)
-	{
-		games = games1;
-	};
-	void change_goals( int goals1)
-	{
-		goals = goals1;
-	};
-	void change_age( int age1)
-	{
-		age = age1;
-	};
-	void change_red_cards( int red_cards1)
-	{
-		red_cards = red_cards1;
-	};
-	void change_yellow_cards( int yellow_cards1)
-	{
-		yellow_cards = yellow_cards1;
-	};
-	void change_weight( int weight1)
-	{
-		weight = weight1;
-	};
-	void change_height( int height1)
-	{
-		height = height1;
-	};
-	void change_assists( int assists1)
-	{
-		assists = assists1;
-	};
-
 };
 
+void fp_change_name(field_player *a, char* name1);
+void fp_change_position(field_player *a, char* position1);
+void fp_change_nation(field_player *a, char* nation1);
+void fp_change_games(field_player *a, int games1);
+void fp_change_goals(field_player *a, int goals1);
+void fp_change_age(field_player *a, int age1);
+void fp_change_red_cards(field_player *a, int red_cards1);
+void fp_change_yellow_cards(field_player *a, int yellow_cards1);
+void fp_change_weight(field_player *a, int weight1);
+void fp_change_height(field_player *a, int height1);
+void fp_change_assists(field_player *a, int assists1);
