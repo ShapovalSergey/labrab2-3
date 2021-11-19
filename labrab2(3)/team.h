@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include "Class.h"
-class team : league
+class team
 {
 private:
 	char name[50];
@@ -15,8 +15,7 @@ private:
 	//////////////////////////func
 public:
 	team() {};
-	team(const league& a) :league(a) {};
-	team(const league& a, const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1) : league(a)
+	team(const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1) 
 	{
 
 		strcpy(name, name1);

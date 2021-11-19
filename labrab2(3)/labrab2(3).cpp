@@ -11,7 +11,138 @@
 #include <conio.h>
 
 league a1("РПЛ",16,"2020-2021","Россия");
-team b1(a1, "Динамо", 10, 9, 1, 15, 3, "Москва");
+team b1("Динамо", 10, 9, 1, 15, 3, "Москва");
+
+void input_full_league(league *a) 
+{
+char im[50],loc[50],season[15]; int i;
+                printf("Введите название лиги\n");
+                scanf("%s",&im);
+                a->change_name(im);
+                printf("Введите количество команд\n");
+                scanf("%d",&i);
+                a->change_value(i);
+                printf("Введите сезон лиги\n");
+                scanf("%s",&season);
+                a->change_years( season);
+                printf("Введите страну лиги\n");
+                scanf("%s",&loc);
+                a->change_loc(loc);
+};
+void input_full_team(team* a)
+{
+    char im[50], loc[50]; int i;
+    printf("Введите название команды\n");
+    scanf("%s", &im);
+    a->change_name(im);
+    printf("Введите количество побед\n");
+    scanf("%d", &i);
+    a->change_wins(i);
+    printf("Введите количество поражений\n");
+    scanf("%d", &i);
+    a->change_defeats(i);
+    printf("Введите количество ничьих\n");
+    scanf("%d", &i);
+    a->change_draws(i);
+    printf("Введите количество полевых игроков\n");
+    scanf("%d", &i);
+    a->change_value_of_field_players(i);
+    printf("Введите количество вратарей\n");
+    scanf("%d", &i);
+    a->change_value_of_goalkeepers(i);
+    printf("Введите город команды\n");
+    scanf("%s", &loc);
+    a->change_location(loc);
+};
+
+void input_full_gp(goalkeeper* a) 
+{
+    char im[50], loc[50]; int i;
+    printf("Введите имя вратаря\n");
+    scanf("%s", &im);
+    a->change_name(im);
+    printf("Введите возраст\n");
+    scanf("%d", &i);
+    a->change_age(i);
+    printf("Введите количество голов вратаря\n");
+    scanf("%d", &i);
+    a->change_goals(i);
+    printf("Введите количество асистов вратаря\n");
+    scanf("%d", &i);
+    a->change_assists(i);
+    printf("Введите количество красных карточек\n");
+    scanf("%d", &i);
+    a->change_red_cards(i);
+    printf("Введите количество желтых карточек\n");
+    scanf("%d", &i);
+    a->change_yellow_cards(i);
+    printf("Введите количество пропущенных мячей\n");
+    scanf("%d", &i);
+    a->change_missed_balls(i);
+    printf("Введите национальность вратаря\n");
+    scanf("%s", &loc);
+    a->change_nation(loc);
+    printf("Введите вес вратаря\n");
+    scanf("%d", &i);
+    a->change_weight(i);
+    printf("Введите рост вратаря\n");
+    scanf("%d", &i);
+    a->change_height(i);
+};
+
+
+void input_full_fp(field_player* a) 
+{
+    char im[50], loc[50]; int i; char pos[15];
+    printf("Введите имя полевого игрока\n");
+    scanf("%s", &im);
+    a->change_name(im);
+    printf("Введите возраст\n");
+    scanf("%d", &i);
+    a->change_age(i);
+    printf("Введите количество голов полевого игрока\n");
+    scanf("%d", &i);
+    a->change_goals(i);
+    printf("Введите количество асистов полевого игрока\n");
+    scanf("%d", &i);
+    a->change_assists(i);
+    printf("Введите количество красных карточек\n");
+    scanf("%d", &i);
+    a->change_red_cards(i);
+    printf("Введите количество желтых карточек\n");
+    scanf("%d", &i);
+    a->change_yellow_cards(i);
+    printf("Введите позицию\n");
+    scanf("%s", &pos);
+    a->change_position(pos);
+    printf("Введите национальность полевого игрока\n");
+    scanf("%s", &loc);
+    a->change_nation(loc);
+    printf("Введите вес полевого игрока\n");
+    scanf("%d", &i);
+    a->change_weight(i);
+    printf("Введите рост полевого игрока\n");
+    scanf("%d", &i);
+    a->change_height(i);
+};
+void input_full_game(game* a) 
+{
+    char im[50];
+    printf("Введите название лиги\n");
+    scanf("%s", &im);
+    a->change_name(im);
+    printf("Введите команду - хозяев\n");
+    scanf("%s", &im);
+    a->change_home_team(im);
+    printf("Введите команду - гостей\n");
+    scanf("%s", &im);
+    a->change_visitor_team(im);
+    printf("Введите результат матч\n");
+    scanf("%s", &im);
+    a->change_result(im);
+};
+
+
 void func1() 
 {
     int check = 1; int mode; int action ;
@@ -26,21 +157,7 @@ void func1()
             scanf("%d",&action);
             if (action ==1)
             {
-                char im[50],loc[50],season[15]; int i;
-                printf("Введите название лиги\n");
-                scanf("%s",&im);
-                a.change_name(im);
-                printf("Введите количество команд\n");
-                scanf("%d",&i);
-                a.change_value(i);
-                printf("Введите сезон лиги\n");
-                scanf("%s",&season);
-                a.change_years( season);
-                printf("Введите страну лиги\n");
-                scanf("%s",&loc);
-                a.change_loc(loc);
-               
-                
+                input_full_league(&a);
             }
             if (action == 2)
             {
@@ -88,21 +205,7 @@ void func1()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50], season[15]; int i;
-                printf("Введите название лиги\n");
-                scanf("%s", &im);
-                b->change_name(im);
-                printf("Введите количество команд\n");
-                scanf("%d", &i);
-                b->change_value(i);
-                printf("Введите сезон лиги\n");
-                scanf("%s", &season);
-                b->change_years(season);
-                printf("Введите страну лиги\n");
-                scanf("%s", &loc);
-                b->change_loc(loc);
-
-
+                input_full_league(b);
             }
             if (action == 2)
             {
@@ -156,7 +259,7 @@ void func2()
     int check = 1; int mode; int action;
     while (check == 1)
     {
-        team a(a1);
+        team a;
         printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический ");
         scanf("%d", &mode);
         while (mode == 1)
@@ -165,30 +268,7 @@ void func2()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50]; int i;
-                printf("Введите название команды\n");
-                scanf("%s", &im);
-                a.change_name(im);
-                printf("Введите количество побед\n");
-                scanf("%d", &i);
-                a.change_wins(i);
-                printf("Введите количество поражений\n");
-                scanf("%d", &i);
-                a.change_defeats(i);
-                printf("Введите количество ничьих\n");
-                scanf("%d", &i);
-                a.change_draws(i);
-                printf("Введите количество полевых игроков\n");
-                scanf("%d", &i);
-                a.change_value_of_field_players(i);
-                printf("Введите количество вратарей\n");
-                scanf("%d", &i);
-                a.change_value_of_goalkeepers(i);
-                printf("Введите город команды\n");
-                scanf("%s", &loc);
-                a.change_location(loc);
-
-
+                input_full_team(&a);
             }
             if (action == 2)
             {
@@ -257,30 +337,7 @@ void func2()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50]; int i;
-                printf("Введите название команды\n");
-                scanf("%s", &im);
-                b->change_name(im);
-                printf("Введите количество побед\n");
-                scanf("%d", &i);
-                b->change_wins(i);
-                printf("Введите количество поражений\n");
-                scanf("%d", &i);
-                b->change_defeats(i);
-                printf("Введите количество ничьих\n");
-                scanf("%d", &i);
-                b->change_draws(i);
-                printf("Введите количество полевых игроков\n");
-                scanf("%d", &i);
-                b->change_value_of_field_players(i);
-                printf("Введите количество вратарей\n");
-                scanf("%d", &i);
-                b->change_value_of_goalkeepers(i);
-                printf("Введите город команды\n");
-                scanf("%s", &loc);
-                b->change_location(loc);
-
-
+                input_full_team(b);
             }
             if (action == 2)
             {
@@ -361,37 +418,7 @@ void func3()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50]; int i;
-                printf("Введите имя вратаря\n");
-                scanf("%s", &im);
-                a.change_name(im);
-                printf("Введите возраст\n");
-                scanf("%d", &i);
-                a.change_age(i);
-                printf("Введите количество голов вратаря\n");
-                scanf("%d", &i);
-                a.change_goals(i);
-                printf("Введите количество асистов вратаря\n");
-                scanf("%d", &i);
-                a.change_assists(i);
-                printf("Введите количество красных карточек\n");
-                scanf("%d", &i);
-                a.change_red_cards(i);
-                printf("Введите количество желтых карточек\n");
-                scanf("%d", &i);
-                a.change_yellow_cards(i);
-                printf("Введите количество пропущенных мячей\n");
-                scanf("%d", &i);
-                a.change_missed_balls(i);
-                printf("Введите национальность вратаря\n");
-                scanf("%s", &loc);
-                a.change_nation(loc);
-                printf("Введите вес вратаря\n");
-                scanf("%d", &i);
-                a.change_weight(i);
-                printf("Введите рост вратаря\n");
-                scanf("%d", &i);
-                a.change_height(i);
+                input_full_gp(&a);
             }
             if (action == 2)
             {
@@ -482,37 +509,7 @@ void func3()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50]; int i;
-                printf("Введите имя вратаря\n");
-                scanf("%s", &im);
-                b->change_name(im);
-                printf("Введите возраст\n");
-                scanf("%d", &i);
-                b->change_age(i);
-                printf("Введите количество голов вратаря\n");
-                scanf("%d", &i);
-                b->change_goals(i);
-                printf("Введите количество асистов вратаря\n");
-                scanf("%d", &i);
-                b->change_assists(i);
-                printf("Введите количество красных карточек\n");
-                scanf("%d", &i);
-                b->change_red_cards(i);
-                printf("Введите количество желтых карточек\n");
-                scanf("%d", &i);
-                b->change_yellow_cards(i);
-                printf("Введите количество пропущенных мячей\n");
-                scanf("%d", &i);
-                b->change_missed_balls(i);
-                printf("Введите национальность вратаря\n");
-                scanf("%s", &loc);
-                b->change_nation(loc);
-                printf("Введите вес вратаря\n");
-                scanf("%d", &i);
-                b->change_weight(i);
-                printf("Введите рост вратаря\n");
-                scanf("%d", &i);
-                b->change_height(i);
+                input_full_gp(b);
             }
             if (action == 2)
             {
@@ -615,37 +612,7 @@ void func4()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50]; int i; char pos[15];
-                printf("Введите имя полевого игрока\n");
-                scanf("%s", &im);
-                a.change_name(im);
-                printf("Введите возраст\n");
-                scanf("%d", &i);
-                a.change_age(i);
-                printf("Введите количество голов полевого игрока\n");
-                scanf("%d", &i);
-                a.change_goals(i);
-                printf("Введите количество асистов полевого игрока\n");
-                scanf("%d", &i);
-                a.change_assists(i);
-                printf("Введите количество красных карточек\n");
-                scanf("%d", &i);
-                a.change_red_cards(i);
-                printf("Введите количество желтых карточек\n");
-                scanf("%d", &i);
-                a.change_yellow_cards(i);
-                printf("Введите позицию\n");
-                scanf("%s", &pos);
-                a.change_position(pos);
-                printf("Введите национальность полевого игрока\n");
-                scanf("%s", &loc);
-                a.change_nation(loc);
-                printf("Введите вес полевого игрока\n");
-                scanf("%d", &i);
-                a.change_weight(i);
-                printf("Введите рост полевого игрока\n");
-                scanf("%d", &i);
-                a.change_height(i);
+                input_full_fp(&a);
             }
             if (action == 2)
             {
@@ -736,37 +703,7 @@ void func4()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50], loc[50]; int i;char pos[15];
-                printf("Введите имя полевого игрока\n");
-                scanf("%s", &im);
-                b->change_name(im);
-                printf("Введите возраст\n");
-                scanf("%d", &i);
-                b->change_age(i);
-                printf("Введите количество голов полевого игрока\n");
-                scanf("%d", &i);
-                b->change_goals(i);
-                printf("Введите количество асистов полевого игрока\n");
-                scanf("%d", &i);
-                b->change_assists(i);
-                printf("Введите количество красных карточек\n");
-                scanf("%d", &i);
-                b->change_red_cards(i);
-                printf("Введите количество желтых карточек\n");
-                scanf("%d", &i);
-                b->change_yellow_cards(i);
-                printf("Введите позицию\n");
-                scanf("%s", &pos);
-                b->change_position(pos);
-                printf("Введите национальность полевого игрока\n");
-                scanf("%s", &loc);
-                b->change_nation(loc);
-                printf("Введите вес полевого игрока\n");
-                scanf("%d", &i);
-                b->change_weight(i);
-                printf("Введите рост полевого игрока\n");
-                scanf("%d", &i);
-                b->change_height(i);
+                input_full_fp(b);
             }
             if (action == 2)
             {
@@ -869,21 +806,7 @@ void func5()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50];
-                printf("Введите название лиги\n");
-                scanf("%s", &im);
-                a.change_name(im);
-                printf("Введите команду - хозяев\n");
-                scanf("%s", &im);
-                a.change_home_team(im);
-                printf("Введите команду - гостей\n");
-                scanf("%s", &im);
-                a.change_visitor_team(im);
-                printf("Введите результат матч\n");
-                scanf("%s", &im);
-                a.change_result(im);
-
-
+                input_full_game(&a);
             }
             if (action == 2)
             {
@@ -931,21 +854,7 @@ void func5()
             scanf("%d", &action);
             if (action == 1)
             {
-                char im[50];
-                printf("Введите название лиги\n");
-                scanf("%s", &im);
-                b->change_name(im);
-                printf("Введите команду - хозяев\n");
-                scanf("%s", &im);
-                b->change_home_team(im);
-                printf("Введите команду - гостей\n");
-                scanf("%s", &im);
-                b->change_visitor_team(im);
-                printf("Введите результат матч\n");
-                scanf("%s", &im);
-                b->change_result(im);
-
-
+                input_full_game(b);
             }
             if (action == 2)
             {

@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include "team.h"
-class field_player:team
+class field_player
 {
 private:
 	char name[30];
@@ -19,8 +19,7 @@ private:
 	//////////////////////////func
 public:
 	field_player() {};
-	field_player(const team &a) :team(a){};
-	field_player(const team& a, char* name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, char* position1, char* nation1, int weig1, int heig1) : team(a)
+	field_player( char* name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, char* position1, char* nation1, int weig1, int heig1) 
 	{
 		strcpy(name, name1);
 		strcpy(nation, nation1);
