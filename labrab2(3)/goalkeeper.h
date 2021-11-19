@@ -1,7 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
-#pragma once
-#include "team.h"
+#include <vector>
+#include <iostream>
+//#include "team.h"
+class team;
 class goalkeeper
 {
 private:
@@ -16,8 +18,13 @@ private:
 	char nation[30];
 	int weight;
 	int height;
+	std::vector<team*> tm;
 	//////////////////////////func
 public:
+	void AddTeam(team* team) 
+	{
+		tm.push_back(team);
+	};
 	goalkeeper() {};
 	goalkeeper( char* name1,int age1,int games1,int goals1, int assists1,int red1,int yellow1,int miss1, char* nation1, int weig1, int heig1 )
 	{
@@ -89,5 +96,6 @@ public:
 	int return_weight() {return weight;};
 	int return_height() { return height; };
 	//~goalkeeper();
+	void vivod() { printf("%s %s %d %d %d %d %d %d %d %d %d %d %d", name, nation, age, games, goals, assists, red_cards, yellow_cards, missed_balls, weight, height); };
 };
 

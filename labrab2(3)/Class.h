@@ -61,7 +61,7 @@ public:
 	};
 
 	//~league();
-
+	void vivod() { printf("%s %d %s %s",name,value_of_teams,years,location); };
 
 };
 

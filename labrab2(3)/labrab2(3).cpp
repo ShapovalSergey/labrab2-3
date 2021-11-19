@@ -29,6 +29,7 @@ char im[50],loc[50],season[15]; int i;
                 scanf("%s",&loc);
                 a->change_loc(loc);
 };
+
 void input_full_team(team* a)
 {
     char im[50], loc[50]; int i;
@@ -90,7 +91,6 @@ void input_full_gp(goalkeeper* a)
     a->change_height(i);
 };
 
-
 void input_full_fp(field_player* a) 
 {
     char im[50], loc[50]; int i; char pos[15];
@@ -125,6 +125,7 @@ void input_full_fp(field_player* a)
     scanf("%d", &i);
     a->change_height(i);
 };
+
 void input_full_game(game* a) 
 {
     char im[50];
@@ -141,7 +142,6 @@ void input_full_game(game* a)
     scanf("%s", &im);
     a->change_result(im);
 };
-
 
 void func1() 
 {
@@ -172,7 +172,6 @@ void func1()
                 printf("Введите количество команд\n");
                 scanf("%d", &i);
                 a.change_value(i);
-
             }
             if (action == 4)
             {
@@ -190,17 +189,15 @@ void func1()
             }
             if (action == 6)
             {
-                printf("%s %d %s %s\n",a.return_name(),a.return_value(),a.return_years(),a.return_location());
+                a.vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
-
         }
         league* b = new league();
         while (mode ==2)
         {
-            
             printf("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
             scanf("%d", &action);
             if (action == 1)
@@ -220,7 +217,6 @@ void func1()
                 printf("Введите количество команд\n");
                 scanf("%d", &i);
                 b->change_value(i);
-
             }
             if (action == 4)
             {
@@ -238,21 +234,17 @@ void func1()
             }
             if (action == 6)
             {
-                printf("%s %d %s %s\n", b->return_name(), b->return_value(), b->return_years(), b->return_location());
+                b->vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
-
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check); 
         delete b;
-        
     }
-   
 };
-
 
 void func2() 
 {
@@ -283,7 +275,6 @@ void func2()
                 printf("Введите количество побед\n");
                 scanf("%d", &i);
                 a.change_wins(i);
-
             }
             if (action == 4)
             {
@@ -312,7 +303,6 @@ void func2()
                 printf("Введите количество вратарей\n");
                 scanf("%d", &i);
                 a.change_value_of_goalkeepers(i);
-
             }
             if (action == 8)
             {
@@ -323,12 +313,11 @@ void func2()
             }
             if (action == 9)
             {
-                printf("%s %d %d %d %d %d %s \n", a.return_name(), a.return_wins(), a.return_defeats(), a.return_draws(),a.return_value_of_field_players(),a.return_value_of_goalkeepers(),a.return_location());
+                a.vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
-
         }
         team* b = new team();
         while (mode == 2)
@@ -352,7 +341,6 @@ void func2()
                 printf("Введите количество побед\n");
                 scanf("%d", &i);
                 b->change_wins(i);
-
             }
             if (action == 4)
             {
@@ -391,16 +379,15 @@ void func2()
             }
             if (action == 9)
             {
-                printf("%s %d %d %d %d %d %s \n", b->return_name(), b->return_wins(), b->return_defeats(), b->return_draws(), b->return_value_of_field_players(), b->return_value_of_goalkeepers(),b->return_location());
+                b->vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check);
-        delete b;
-        
+        delete b;        
     }
 };
 
@@ -433,7 +420,6 @@ void func3()
                 printf("Введите возраст\n");
                 scanf("%d", &i);
                 a.change_age(i);
-
             }
             if (action == 4)
             {
@@ -462,7 +448,6 @@ void func3()
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
                 a.change_yellow_cards(i);
-
             }
             if (action == 8)
             {
@@ -484,7 +469,6 @@ void func3()
                 printf("Введите вес вратаря\n");
                 scanf("%d", &i);
                 a.change_height(i);
-
             }
             if (action == 11)
             {
@@ -492,14 +476,13 @@ void func3()
                 printf("Введите рост вратаря\n");
                 scanf("%d", &i);
                 a.change_height(i);
-
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %d %d %d\n", a.return_name(), a.return_age(), a.return_goals(), a.return_assists(), a.return_red_cards(), a.return_yellow_cards(), a.return_nation(),a.return_missed_balls(),a.return_weight(),a.return_height());
+                a.vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         goalkeeper* b = new goalkeeper();;
@@ -524,7 +507,6 @@ void func3()
                 printf("Введите возраст\n");
                 scanf("%d", &i);
                 b->change_age(i);
-
             }
             if (action == 4)
             {
@@ -553,7 +535,6 @@ void func3()
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
                 b->change_yellow_cards(i);
-
             }
             if (action == 8)
             {
@@ -575,7 +556,6 @@ void func3()
                 printf("Введите вес вратаря\n");
                 scanf("%d", &i);
                 b->change_height(i);
-
             }
             if (action == 11)
             {
@@ -586,10 +566,10 @@ void func3()
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %d %d %d\n", b->return_name(), b->return_age(), b->return_goals(), b->return_assists(), b->return_red_cards(), b->return_yellow_cards(), b->return_nation(), b->return_missed_balls(), b->return_weight(), b->return_height());
+                b->vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         delete b;
@@ -627,7 +607,6 @@ void func4()
                 printf("Введите возраст\n");
                 scanf("%d", &i);
                 a.change_age(i);
-
             }
             if (action == 4)
             {
@@ -656,7 +635,6 @@ void func4()
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
                 a.change_yellow_cards(i);
-
             }
             if (action == 8)
             {
@@ -678,7 +656,6 @@ void func4()
                 printf("Введите вес полевого игрока\n");
                 scanf("%d", &i);
                 a.change_height(i);
-
             }
             if (action == 11)
             {
@@ -686,14 +663,13 @@ void func4()
                 printf("Введите рост полевого игрока\n");
                 scanf("%d", &i);
                 a.change_height(i);
-
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %s %d %d\n", a.return_name(), a.return_age(), a.return_goals(), a.return_assists(), a.return_red_cards(), a.return_yellow_cards(), a.return_nation(), a.return_position(), a.return_weight(), a.return_height());
+                a.vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         field_player* b = new field_player();
@@ -718,7 +694,6 @@ void func4()
                 printf("Введите возраст\n");
                 scanf("%d", &i);
                 b->change_age(i);
-
             }
             if (action == 4)
             {
@@ -747,7 +722,6 @@ void func4()
                 printf("Введите количество желтых карточек\n");
                 scanf("%d", &i);
                 b->change_yellow_cards(i);
-
             }
             if (action == 8)
             {
@@ -769,7 +743,6 @@ void func4()
                 printf("Введите вес полевого игрока\n");
                 scanf("%d", &i);
                 b->change_height(i);
-
             }
             if (action == 11)
             {
@@ -780,10 +753,10 @@ void func4()
             }
             if (action == 12)
             {
-                printf("%s %d %d %d %d %d %s %s %d %d\n", b->return_name(), b->return_age(), b->return_goals(), b->return_assists(), b->return_red_cards(), b->return_yellow_cards(), b->return_nation(), b->return_position(), b->return_weight(), b->return_height());
+                b->vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         delete b;
@@ -821,7 +794,6 @@ void func5()
                 printf("Введите команду - хозяев\n");
                 scanf("%s", &im);
                 a.change_home_team(im);
-
             }
             if (action == 4)
             {
@@ -839,17 +811,15 @@ void func5()
             }
             if (action == 6)
             {
-                printf("%s\n%s %s %s\n", a.return_name(), a.return_home_team(), a.return_result(), a.return_visitor_team());
+                a.vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
-
         }
         game* b = new game();;
         while (mode == 2)
         {
-
             printf("Выберите, что вы хотите сделать\n1)Ввести данные матча\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матча\n");
             scanf("%d", &action);
             if (action == 1)
@@ -869,7 +839,6 @@ void func5()
                 printf("Введите команду - хозяев\n");
                 scanf("%s", &im);
                 b->change_home_team(im);
-
             }
             if (action == 4)
             {
@@ -887,10 +856,10 @@ void func5()
             }
             if (action == 6)
             {
-                printf("%s\n%s %s %s\n", b->return_name(), b->return_home_team(), b->return_result(), b->return_visitor_team());
+                b->vivod();
             }
             _getch();
-            printf("Вы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
+            printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         delete b;
@@ -898,6 +867,7 @@ void func5()
         scanf("%d", &check);
     }
 };
+
 void func6()
 {
     int mode; int check = 1; game* b1 = new game; game* b2 = new game; int k; int action;
@@ -910,13 +880,11 @@ void func6()
         scanf("%d", &mode);
         while (mode == 1)
         {
-       
             printf("Выберите, что вы хотите сделать\n1)Ввести данные матчей\n2)Изменить название лиги\n3)Изменить команду - хозяев\n4)Изменить команду - гостей\n5)Изменить результат матча\n6)Вывести данные матчей\n");
             scanf("%d", &action);
             if (action == 1)
             {
                 char im[50];
-
                 for (int i = 0; i < k; i++)
                 {
                     printf("Введите название лиги\n");
@@ -932,8 +900,6 @@ void func6()
                     scanf("%s", &im);
                     mas[i].change_result(im);
                     printf("\n-----------------------------------------------\n");
-
-
                 }
             }
                 if (action == 2)
@@ -953,7 +919,6 @@ void func6()
                     printf("Введите команду - хозяев\n");
                     scanf("%s", &im);
                     mas[n-1].change_home_team(im);
-
                 }
                 if (action == 4)
                 {
@@ -980,9 +945,7 @@ void func6()
                         printf("%d) %s\n%s %s %s\n",i+1, mas[i].return_name(), mas[i].return_home_team(), mas[i].return_result(), mas[i].return_visitor_team());
                         printf("---------------------------------------------------------------------------------------------------------\n");
                     }
-
                 }
-
                 _getch();
                 printf("Вы хотите продолжить с этим типом массива? 1 - да, 0 - нет ");
                 scanf("%d", &mode);
@@ -1024,14 +987,9 @@ void func6()
                 printf("-----------------------------------------------\n");
                 for (int i = 0; i < 2; i++)
                 {
-
                     printf("%d)%s\n%s %s %s\n", i + 1, b[i]->return_name(), b[i]->return_home_team(), b[i]->return_result(), b[i]->return_visitor_team());
                     printf("\n-----------------------------------------------\n");
                 }
-
-
-
-
                 _getch();
                 printf("Вы хотите продолжить с этим типом массива? 2 - да, 0 - нет ");
                 scanf("%d", &mode);
@@ -1039,19 +997,40 @@ void func6()
             printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
             scanf("%d", &check);
         }
-    
 };
 
+void func7() 
+{
+    int check = 1;
+    while (check==1)
+    {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        printf("Вы хотите продолжить работать с пунктом 7 (реализация ассоциаций)? 1 - да, 0 - нет ");
+        scanf("%d",&check);
+    }
+};
 
 int main()
 {
     setlocale(LC_ALL, "Russian"); int mode; int check = 1;
     while (check==1)
     {
-    printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n");
+    printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n7)Реализация ассоциаций\n");
     scanf("%d",&mode);
     if (mode==1)
     {
@@ -1076,6 +1055,10 @@ int main()
     if (mode == 6)
     {
         func6();
+    }
+    if (mode == 7)
+    {
+        func7();
     }
     printf("Вы хотите продолжить? 1 - да, 0 - нет ");
     scanf("%d",&check);

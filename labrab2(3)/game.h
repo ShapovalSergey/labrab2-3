@@ -1,6 +1,8 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
+#include <conio.h>
+#include <iostream>
 class game
 {
 private:
@@ -39,6 +41,7 @@ public:
 	char* return_home_team() { return home_team; };
 	char* return_visitor_team() { return visitor_team; };
 	char* return_result() { return result; };
+	void vivod() { printf("%s\n%s %s %s\n", league_name,home_team,result, visitor_team); };
 	//~game();
 };
 
