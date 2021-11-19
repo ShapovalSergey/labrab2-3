@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Windows.h>
-
 class league
 { 
 private:
@@ -22,7 +21,7 @@ public:
 	{
 		
 		strcpy(name,name1);
-		int value_of_teams = value_of_teams1;
+		value_of_teams = value_of_teams1;
 		strcpy(years, years1);
 		strcpy(location, location1);
 

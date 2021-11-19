@@ -3,6 +3,7 @@
 #include <string.h>
 #include <vector>
 #include <iostream>
+#include "Class.h"
 //#include "field_player.h"
 //#include "goalkeeper.h"
 //class goalkeeper;
@@ -82,6 +83,7 @@ public:
 	int return_value_of_field_players() { return value_of_field_players; };
 	int return_value_of_goalkeepers() { return value_of_goalkeepers; };
 	char* return_location() { return location; };
+	void league_vivod() { printf("\n%s %d %s %s", lg[0]->return_name(), lg[0]->return_value(), lg[0]->return_location(), lg[0]->return_years()); };
 	//~team();
 	void vivod() { printf("%s %d %d %d %d %d %s",name,defeats,wins,draws,value_of_field_players,value_of_goalkeepers,location); };
 };
