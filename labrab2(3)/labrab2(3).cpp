@@ -999,33 +999,198 @@ void func6()
         }
 };
 
-void func7() 
+void association_pl_tm() 
 {
-    int check = 1;
+    int check = 1; int val_team, val_player; int mode;
+    printf("\nВведите количество команд "); scanf("%d",&val_team);team* kom=new team[val_team] ;
+    printf("\nВведите количество полевых игроков "); scanf("%d", &val_player); field_player* igr = new field_player[val_player];
+        for (int i = 0; i < val_team; i++)
+        {
+            printf("%d)", i + 1); input_full_team(&kom[i]); printf("\n----------------------------------------------\n");
+        }
+        for (int i = 0; i < val_player; i++)
+        {
+            printf("%d)", i + 1); input_full_fp(&igr[i]); printf("\n----------------------------------------------\n");
+        }
     while (check==1)
     {
-        league *a=new league("РПЛ", 16, "2020-2021", "Россия");
-        team *b=new team("Динамо", 10, 9, 1, 15, 3, "Москва");
-        b->AddLeague(a);
-        b->vivod();
-        b->league_vivod();
         
-            
+        printf("\nВыберите, что вы хотите сделать\n1)Вывести список всех игроков\n2)Вывести список команд\n3)Выполнить ассоциацию игрок - команда\n4)Вывести команду игрока\n");
+        scanf("%d",&mode);
+        if (mode == 1)
+        {
+            for (int i = 0; i < val_player; i++)
+            {
+                printf("%d) %s\n",i+1,igr[i].return_name());
+            }
+        }
+        if (mode == 2)
+        {
+            for (int i = 0; i < val_team; i++)
+            {
+                printf("%d) %s\n", i + 1, kom[i].return_name());
+            }
+        }
+        if (mode == 3)
+        {
+            int pl,tm; printf("Выберите игрока \n");
+            for (int i = 0; i < val_player; i++)
+            {
+                printf("%d) %s\n", i + 1, igr[i].return_name());
+            }
+            scanf("%d", &pl); while ((pl<1)||(pl>val_player))
+            {
+                printf("Введите номер игрока из списка\n");
+                scanf("%d", &pl);
+            }
+            printf("Введите номер команды\n");
+            for (int i = 0; i < val_team; i++)
+            {
+                printf("%d) %s\n", i + 1, kom[i].return_name());
+            }
+            scanf("%d", &tm); while ((tm < 1) || (tm > val_team))
+            {
+                printf("Введите номер команды из списка\n");
+                scanf("%d", &pl);
+            }
+            igr[pl - 1].AddTeam(&kom[tm-1]);
+            printf("Ассоциация выполненина\n");
+        }
+        if (mode == 4)
+        {
+            int pl; printf("Выберите игрока \n");
+            for (int i = 0; i < val_player; i++)
+            {
+                printf("%d) %s\n", i + 1, igr[i].return_name());
+            }
+            scanf("%d", &pl); while ((pl < 1) || (pl > val_player))
+            {
+                printf("Введите номер игрока из списка\n");
+                scanf("%d", &pl);
+            }
+            if (igr[pl-1].tm.empty())
+            {
+                printf("У игрока нет команды\n");
+            }
+            else
+            {
+                igr[pl - 1].team_vivod();
+            }   
+        }
+        printf("\nВы хотите продолжить работать с данной ассоциацией 1 - да, 0 - нет ");
+        scanf("%d", &check);
+    }
+};
 
+void association_tm_lg()
+{
+    int check = 1; int val_league, val_team; int mode;
+    printf("\nВведите количество лиг "); scanf("%d",&val_league);league* lea=new league[val_league] ;
+    printf("\nВведите количество команд "); scanf("%d", &val_team); team* tm = new team[val_team];
+        for (int i = 0; i < val_league; i++)
+        {
+            printf("%d)", i + 1); input_full_league(&lea[i]); printf("\n----------------------------------------------\n");
+        }
+        for (int i = 0; i < val_team; i++)
+        {
+            printf("%d)", i + 1); input_full_team(&tm[i]); printf("\n----------------------------------------------\n");
+        }
+    while (check==1)
+    {
+        
+        printf("\nВыберите, что вы хотите сделать\n1)Вывести список команд\n2)Вывести список лиг\n3)Выполнить ассоциацию команда - лига\n4)Вывести лигу команды\n");
+        scanf("%d",&mode);
+        if (mode == 1)
+        {
+            for (int i = 0; i < val_team; i++)
+            {
+                printf("%d) %s\n",i+1,tm[i].return_name());
+            }
+        }
+        if (mode == 2)
+        {
+            for (int i = 0; i < val_league; i++)
+            {
+                printf("%d) %s\n", i + 1, lea[i].return_name());
+            }
+        }
+        if (mode == 3)
+        {
+            int leag,team; printf("Выберите команду \n");
+            for (int i = 0; i < val_team; i++)
+            {
+                printf("%d) %s\n", i + 1, tm[i].return_name());
+            }
+            scanf("%d", &team); while ((team<1)||(team>val_team))
+            {
+                printf("Введите номер команды из списка\n");
+                scanf("%d", &team);
+            }
+            printf("Введите номер лиги\n");
+            for (int i = 0; i < val_league; i++)
+            {
+                printf("%d) %s\n", i + 1, lea[i].return_name());
+            }
+            scanf("%d", &leag); while ((leag < 1) || (leag > val_league))
+            {
+                printf("Введите номер команды из списка\n");
+                scanf("%d", &leag);
+            }
+            tm[team - 1].AddLeague(&lea[leag-1]);
+            printf("Ассоциация выполненина\n");
+        }
+        if (mode == 4)
+        {
+            int team; printf("Выберите команду \n");
+            for (int i = 0; i < val_team; i++)
+            {
+                printf("%d) %s\n", i + 1, tm[i].return_name());
+            }
+            scanf("%d", &team); while ((team < 1) || (team > val_team))
+            {
+                printf("Введите номер команды из списка\n");
+                scanf("%d", &team);
+            }
+            if (tm[team-1].lg.empty())
+            {
+                printf("У команды нет лиги\n");
+            }
+            else
+            {
+                tm[team - 1].league_vivod();
+            }   
+        }
+        printf("\nВы хотите продолжить работать с данной ассоциацией 1 - да, 0 - нет ");
+        scanf("%d", &check);
+    }
+};
 
-
-
-
-
-
-
-
-
-
+void func7() 
+{
+    int check = 1; int mode;
+    while (check==1)
+    {
+       // league *a=new league("РПЛ", 16, "2020-2021", "Россия");
+       // team *b=new team("Динамо", 10, 9, 1, 15, 3, "Москва");
+       // b->AddLeague(a);
+       // b->vivod();
+       // b->league_vivod();
+        printf("Выберите с чем вы хотите работать\n1)Ассоциация игрок - команда \n2)Ассоциация команда - лига\n");
+        scanf("%d", &mode);
+        if (mode ==1)
+        {
+            association_pl_tm();
+        }
+        if (mode = 2)
+        {
+            association_tm_lg();
+        }
         printf("\nВы хотите продолжить работать с пунктом 7 (реализация ассоциаций)? 1 - да, 0 - нет ");
         scanf("%d",&check);
     }
 };
+
+
 
 int main()
 {

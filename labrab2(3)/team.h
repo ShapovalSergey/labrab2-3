@@ -4,10 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Class.h"
-//#include "field_player.h"
-//#include "goalkeeper.h"
-//class goalkeeper;
-//class field_player;
+
 class league;
 class team
 {
@@ -19,23 +16,14 @@ private:
 	int value_of_field_players;
 	int value_of_goalkeepers;
 	char location[50];
-	//std::vector<field_player*> m_field_player;
-	//std::vector<goalkeeper*> m_goalkeeper;
-	std::vector<league*> lg;
+	
 	//////////////////////////func
 public:
+	std::vector<league*> lg;
 	void AddLeague(league* a) 
 	{
 		lg.push_back(a);
 	};
-	/*void AddGoalkeeper(goalkeeper* gp) 
-	{
-		m_goalkeeper.push_back(gp);
-	};
-	void AddFieldPlayer(field_player* fp)
-	{
-		m_field_player.push_back(fp);
-	};*/
 	team() {};
 	team(const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1) 
 	{

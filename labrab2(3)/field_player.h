@@ -3,7 +3,7 @@
 #include <string.h>
 #include <vector>
 #include <iostream>
-//#include "team.h"
+#include "team.h"
 class team;
 class field_player
 {
@@ -19,9 +19,10 @@ private:
 	char nation[30];
 	int weight;
 	int height;
-	std::vector<team*> tm;
+	
 	//////////////////////////func
 public:
+	std::vector<team*> tm;
 	void AddTeam(team* team)
 	{
 		tm.push_back(team);
@@ -96,7 +97,10 @@ public:
 	char* return_position() { return position; };
 	int return_weight() { return weight; };
 	int return_height() { return height; };
+	
+	void team_vivod() { printf("\n%s %d %d %d %d %d %s", tm[0]->return_name(), tm[0]->return_wins(), tm[0]->return_defeats(), tm[0]->return_draws(), tm[0]->return_value_of_field_players(), tm[0]->return_value_of_goalkeepers(), tm[0]->return_location()); };
+
 	//~field_player();
 	void vivod() { printf("%s %s %d %d %d %d %d %d %d %d %s %d %d", name, nation, age, games, goals, assists, red_cards, yellow_cards, position, weight, height); };
-};
+	};
 
