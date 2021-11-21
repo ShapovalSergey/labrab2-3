@@ -18,9 +18,9 @@ private:
 	char nation[30];
 	int weight;
 	int height;
-	std::vector<team*> tm;
 	//////////////////////////func
 public:
+	std::vector<team*> tm;
 	void AddTeam(team* team) 
 	{
 		tm.push_back(team);

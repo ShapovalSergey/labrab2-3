@@ -19,12 +19,10 @@ public:
 	league() {};
 	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
 	{
-		
 		strcpy(name,name1);
 		value_of_teams = value_of_teams1;
 		strcpy(years, years1);
 		strcpy(location, location1);
-
 	};
 	void change_name( char* name1) 
 	{
@@ -58,10 +56,8 @@ public:
 	{
 		return location;
 	};
-
 	//~league();
 	void vivod() { printf("%s %d %s %s",name,value_of_teams,years,location); };
-
 };
 
 

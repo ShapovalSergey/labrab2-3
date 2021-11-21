@@ -4,7 +4,6 @@
 #include <vector>
 #include <iostream>
 #include "Class.h"
-
 class league;
 class team
 {
@@ -16,7 +15,6 @@ private:
 	int value_of_field_players;
 	int value_of_goalkeepers;
 	char location[50];
-	
 	//////////////////////////func
 public:
 	std::vector<league*> lg;
