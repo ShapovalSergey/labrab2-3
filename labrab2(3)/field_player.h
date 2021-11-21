@@ -98,7 +98,7 @@ public:
 	int return_weight() { return weight; };
 	int return_height() { return height; };
 	
-	void team_vivod() { printf("\n%s %d %d %d %d %d %s", tm[0]->return_name(), tm[0]->return_wins(), tm[0]->return_defeats(), tm[0]->return_draws(), tm[0]->return_value_of_field_players(), tm[0]->return_value_of_goalkeepers(), tm[0]->return_location()); };
+	void team_vivod() { printf("\n%s %d %d %d %d %d %s", tm[tm.capacity()-1]->return_name(), tm[tm.capacity() - 1]->return_wins(), tm[tm.capacity() - 1]->return_defeats(), tm[tm.capacity() - 1]->return_draws(), tm[tm.capacity() - 1]->return_value_of_field_players(), tm[tm.capacity() - 1]->return_value_of_goalkeepers(), tm[tm.capacity() - 1]->return_location()); };
 
 	//~field_player();
 	void vivod() { printf("%s %s %d %d %d %d %d %d %d %d %s %d %d", name, nation, age, games, goals, assists, red_cards, yellow_cards, position, weight, height); };
