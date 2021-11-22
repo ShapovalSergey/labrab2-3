@@ -12,7 +12,6 @@
 
 league a1("РПЛ",16,"2020-2021","Россия");
 team b1("Динамо", 10, 9, 1, 15, 3, "Москва");
-
 void input_full_league(league *a) 
 {
 char im[50],loc[50],season[15]; int i;
@@ -1015,7 +1014,7 @@ void association_pl_tm()
     while (check==1)
     {
         
-        printf("\nВыберите, что вы хотите сделать\n1)Вывести список всех игроков\n2)Вывести список команд\n3)Выполнить ассоциацию игрок - команда\n4)Вывести команду игрока\n");
+        printf("\nВыберите, что вы хотите сделать\n1)Вывести список всех игроков\n2)Вывести список команд\n3)Выполнить ассоциацию команда - игрок\n4)Вывести игроков команды\n");
         scanf("%d",&mode);
         if (mode == 1)
         {
@@ -1053,28 +1052,28 @@ void association_pl_tm()
                 printf("Введите номер команды из списка\n");
                 scanf("%d", &pl);
             }
-            igr[pl - 1].AddTeam(&kom[tm-1]);
+             kom[tm - 1].Addfp(&igr[pl-1]);
             printf("Ассоциация выполненина\n");
         }
         if (mode == 4)
         {
-            int pl; printf("Выберите игрока \n");
+            int tm; printf("Выберите команду \n");
             for (int i = 0; i < val_player; i++)
             {
-                printf("%d) %s\n", i + 1, igr[i].return_name());
+                printf("%d) %s\n", i + 1, kom[i].return_name());
             }
-            scanf("%d", &pl); while ((pl < 1) || (pl > val_player))
+            scanf("%d", &tm); while ((tm < 1) || (tm > val_team))
             {
-                printf("Введите номер игрока из списка\n");
-                scanf("%d", &pl);
+                printf("Введите номер команды из списка\n");
+                scanf("%d", &tm);
             }
-            if (igr[pl-1].tm.empty())
+            if (kom[tm-1].fp.empty())
             {
-                printf("У игрока нет команды\n");
+                printf("В команде нет игроков\n");
             }
             else
             {
-                igr[pl - 1].team_vivod();
+                kom[tm - 1].fp_vivod();;
             }   
         }
         printf("\nВы хотите продолжить работать с данной ассоциацией 1 - да, 0 - нет ");
@@ -1098,7 +1097,7 @@ void association_tm_lg()
     while (check==1)
     {
         
-        printf("\nВыберите, что вы хотите сделать\n1)Вывести список команд\n2)Вывести список лиг\n3)Выполнить ассоциацию команда - лига\n4)Вывести лигу команды\n");
+        printf("\nВыберите, что вы хотите сделать\n1)Вывести список команд\n2)Вывести список лиг\n3)Выполнить ассоциацию лига - команда\n4)Вывести лигу команды\n");
         scanf("%d",&mode);
         if (mode == 1)
         {
@@ -1136,28 +1135,28 @@ void association_tm_lg()
                 printf("Введите номер команды из списка\n");
                 scanf("%d", &leag);
             }
-            tm[team - 1].AddLeague(&lea[leag-1]);
+            lea[leag - 1].Addteam(&tm[team-1]);
             printf("Ассоциация выполненина\n");
         }
         if (mode == 4)
         {
-            int team; printf("Выберите команду \n");
-            for (int i = 0; i < val_team; i++)
+            int leag; printf("Выберите лигу \n");
+            for (int i = 0; i < val_league; i++)
             {
                 printf("%d) %s\n", i + 1, tm[i].return_name());
             }
-            scanf("%d", &team); while ((team < 1) || (team > val_team))
+            scanf("%d", &leag); while ((leag < 1) || (leag > val_league))
             {
-                printf("Введите номер команды из списка\n");
-                scanf("%d", &team);
+                printf("Введите номер лиги из списка\n");
+                scanf("%d", &leag);
             }
-            if (tm[team-1].lg.empty())
+            if (lea[leag-1].tm.empty())
             {
-                printf("У команды нет лиги\n");
+                printf("В команде нет лиги\n");
             }
             else
             {
-                tm[team - 1].league_vivod();
+                lea[leag - 1].teamvivod();
             }   
         }
         printf("\nВы хотите продолжить работать с данной ассоциацией 1 - да, 0 - нет ");

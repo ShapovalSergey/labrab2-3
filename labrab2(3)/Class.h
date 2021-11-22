@@ -5,7 +5,10 @@
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
 #include <Windows.h>
+#include "team.h"
+class team;
 class league
 { 
 private:
@@ -15,7 +18,11 @@ private:
 	char location[50];
 	//////////////////////////func
 public:
-	
+	std::vector<team*> tm;
+	void Addteam(team* a) 
+	{
+		tm.push_back(a); 
+	};
 	league() {};
 	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
 	{
@@ -57,6 +64,13 @@ public:
 		return location;
 	};
 	//~league();
+	void teamvivod() 
+	{
+		for (int i = 0; i < tm.capacity() ; i++)
+		{
+			printf("%d)%s\n", i + 1, tm[i]->return_name());
+		}
+	};
 	void vivod() { printf("%s %d %s %s",name,value_of_teams,years,location); };
 };
 

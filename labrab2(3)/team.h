@@ -3,8 +3,11 @@
 #include <string.h>
 #include <vector>
 #include <iostream>
-#include "Class.h"
-class league;
+#include "field_player.h"
+#include "goalkeeper.h"
+
+class goalkeeper;
+class field_player;
 class team
 {
 private:
@@ -17,10 +20,15 @@ private:
 	char location[50];
 	//////////////////////////func
 public:
-	std::vector<league*> lg;
-	void AddLeague(league* a) 
+	std::vector<goalkeeper*> gp;
+	std::vector<field_player*>fp;
+	void Addgoalkeeper(goalkeeper* a) 
 	{
-		lg.push_back(a);
+		gp.push_back(a);
+	};
+	void Addfp(field_player* a)
+	{
+		fp.push_back(a);
 	};
 	team() {};
 	team(const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1) 
@@ -69,8 +77,20 @@ public:
 	int return_value_of_field_players() { return value_of_field_players; };
 	int return_value_of_goalkeepers() { return value_of_goalkeepers; };
 	char* return_location() { return location; };
-	void league_vivod() { printf("\n%s %d %s %s", lg[lg.capacity()-1]->return_name(), lg[lg.capacity() - 1]->return_value(), lg[lg.capacity() - 1]->return_location(), lg[lg.capacity() - 1]->return_years()); };
-	//~team();
+	void goalkeeper_vivod()
+	{
+		for (int i = 0; i < gp.capacity(); i++)
+		{
+			printf("%d)%s\n", i + 1, gp[i]->return_name());
+		}
+	}
+	void fp_vivod()
+	{
+		for (int i = 0; i < fp.capacity(); i++)
+		{
+			printf("%d)%s\n", i + 1, fp[i]->return_name());
+		}
+	}	//~team();
 	void vivod() { printf("%s %d %d %d %d %d %s",name,defeats,wins,draws,value_of_field_players,value_of_goalkeepers,location); };
 };
 
