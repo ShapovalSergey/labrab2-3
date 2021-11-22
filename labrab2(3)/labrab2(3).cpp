@@ -1,9 +1,9 @@
-﻿#include "team.h"
+﻿#define _CRT_SECURE_NO_WARNINGS
+//#include "team.h"
 #include "Class.h"
 #include "game.h"
-#include "field_player.h"
-#include "goalkeeper.h"
-#define _CRT_SECURE_NO_WARNINGS
+//#include "field_player.h"
+//#include "goalkeeper.h"
 #include <string.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -1058,7 +1058,7 @@ void association_pl_tm()
         if (mode == 4)
         {
             int tm; printf("Выберите команду \n");
-            for (int i = 0; i < val_player; i++)
+            for (int i = 0; i < val_team; i++)
             {
                 printf("%d) %s\n", i + 1, kom[i].return_name());
             }
@@ -1097,7 +1097,7 @@ void association_tm_lg()
     while (check==1)
     {
         
-        printf("\nВыберите, что вы хотите сделать\n1)Вывести список команд\n2)Вывести список лиг\n3)Выполнить ассоциацию лига - команда\n4)Вывести лигу команды\n");
+        printf("\nВыберите, что вы хотите сделать\n1)Вывести список команд\n2)Вывести список лиг\n3)Выполнить ассоциацию лига - команда\n4)Вывести команды лиги\n");
         scanf("%d",&mode);
         if (mode == 1)
         {
@@ -1152,7 +1152,7 @@ void association_tm_lg()
             }
             if (lea[leag-1].tm.empty())
             {
-                printf("В команде нет лиги\n");
+                printf("В лиге нет команд\n");
             }
             else
             {

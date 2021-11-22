@@ -1,13 +1,13 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
+#include "field_player.h"
+#include "goalkeeper.h"
 #include <string.h>
 #include <vector>
 #include <iostream>
-#include "field_player.h"
-#include "goalkeeper.h"
-
-class goalkeeper;
 class field_player;
+class goalkeeper;
+
 class team
 {
 private:
@@ -20,16 +20,6 @@ private:
 	char location[50];
 	//////////////////////////func
 public:
-	std::vector<goalkeeper*> gp;
-	std::vector<field_player*>fp;
-	void Addgoalkeeper(goalkeeper* a) 
-	{
-		gp.push_back(a);
-	};
-	void Addfp(field_player* a)
-	{
-		fp.push_back(a);
-	};
 	team() {};
 	team(const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1) 
 	{
@@ -42,6 +32,17 @@ public:
 		value_of_goalkeepers = val_of_gk;
 		strcpy(location, location1);
 	};
+	std::vector<field_player*> fp;
+	std::vector<goalkeeper*> gp;
+	void Addgoalkeeper(goalkeeper* a) 
+	{
+		gp.push_back(a);
+	};
+	void Addfp(field_player* a)
+	{
+		fp.push_back(a);
+	};
+	
 	void change_name(char* name1)
 	{
 		strcpy(name, name1);
@@ -90,7 +91,8 @@ public:
 		{
 			printf("%d)%s\n", i + 1, fp[i]->return_name());
 		}
-	}	//~team();
+	}	
+	//~team();
 	void vivod() { printf("%s %d %d %d %d %d %s",name,defeats,wins,draws,value_of_field_players,value_of_goalkeepers,location); };
 };
 

@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
-#include <vector>
 #include <iostream>
+
 class goalkeeper
 {
 private:
