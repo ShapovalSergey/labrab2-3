@@ -29,9 +29,9 @@ public:
 	{
 		strcpy(home_team, home_team1);
 	};
-	void change_visitor_team( char* visitor_team1)
+	void change_visitor_team( char* visitor_team)
 	{
-		strcpy(visitor_team, visitor_team1);
+		strcpy(this->visitor_team, visitor_team);
 	};
 	void change_result( char* result1)
 	{

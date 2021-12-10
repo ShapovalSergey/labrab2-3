@@ -35,7 +35,7 @@ public:
 	};
 	void change_name( char* name1) 
 	{
-		strcpy(name, name1);
+		strcpy(this->name, name1);
 	};
 	void change_value( int value)
 	{
