@@ -1180,7 +1180,7 @@ void func7()
 
 
 int main()
-а {
+ {
     setlocale(LC_ALL, "Russian"); int mode; int check = 1;
     while (check==1)
     {
