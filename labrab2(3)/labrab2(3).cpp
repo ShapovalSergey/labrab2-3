@@ -886,19 +886,7 @@ void func6()
                 char im[50];
                 for (int i = 0; i < k; i++)
                 {
-                    printf("Введите название лиги\n");
-                    scanf("%s", &im);
-                    mas[i].change_name(im);
-                    printf("Введите команду - хозяев\n");
-                    scanf("%s", &im);
-                    mas[i].change_home_team(im);
-                    printf("Введите команду - гостей\n");
-                    scanf("%s", &im);
-                    mas[i].change_visitor_team(im);
-                    printf("Введите результат матч\n");
-                    scanf("%s", &im);
-                    mas[i].change_result(im);
-                    printf("\n-----------------------------------------------\n");
+                    input_full_game(&mas[i]);
                 }
             }
                 if (action == 2)
@@ -1083,12 +1071,12 @@ void association_pl_tm()
 
 void association_tm_lg()
 {
-    int check = 1; int val_league, val_team; int mode;
+    int check = 1; int val_league, val_team; int mode;char nul [2]= "\0";
     printf("\nВведите количество лиг "); scanf("%d",&val_league);league* lea=new league[val_league] ;
     printf("\nВведите количество команд "); scanf("%d", &val_team); team* tm = new team[val_team];
         for (int i = 0; i < val_league; i++)
         {
-            printf("%d)", i + 1); input_full_league(&lea[i]); printf("\n----------------------------------------------\n");
+            printf("%d)", i + 1); input_full_league(&lea[i]); lea[i].tm.change_name(nul); printf("\n----------------------------------------------\n");
         }
         for (int i = 0; i < val_team; i++)
         {
@@ -1150,7 +1138,7 @@ void association_tm_lg()
                 printf("Введите номер лиги из списка\n");
                 scanf("%d", &leag);
             }
-            if (lea[leag-1].tm.empty())
+            if (lea[leag-1].tm.return_name()[0]=='\0')
             {
                 printf("В лиге нет команд\n");
             }
@@ -1192,7 +1180,7 @@ void func7()
 
 
 int main()
-{
+а {
     setlocale(LC_ALL, "Russian"); int mode; int check = 1;
     while (check==1)
     {

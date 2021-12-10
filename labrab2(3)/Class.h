@@ -18,10 +18,12 @@ private:
 	char location[50];
 	//////////////////////////func
 public:
-	std::vector<team*> tm;
+	//std::vector<team*> tm;
+	team tm;
 	void Addteam(team* a) 
 	{
-		tm.push_back(a); 
+		//tm.push_back(a); 
+		tm = *a;
 	};
 	league() {};
 	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
@@ -66,11 +68,9 @@ public:
 	//~league();
 	void teamvivod() 
 	{
-		for (int i = 0; i < tm.capacity() ; i++)
-		{
-			printf("%d)%s\n", i + 1, tm[i]->return_name());
-		}
+		printf("%s\n",/* i + 1*/tm.return_name()); 
 	};
+	team& return_team() { return tm; };
 	void vivod() { printf("%s %d %s %s",name,value_of_teams,years,location); };
 };
 
