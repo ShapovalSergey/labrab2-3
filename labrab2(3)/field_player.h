@@ -6,46 +6,46 @@
 class field_player
 {
 private:
-	char name[30];
+	std::string name;
 	int age;
 	int games;
 	int goals;
 	int assists;
 	int red_cards;
 	int yellow_cards;
-	char position[15];
-	char nation[30];
+	std::string position;
+	std::string nation;
 	int weight;
 	int height;
 	
 	//////////////////////////func
 public:
 	field_player() {};
-	field_player( char* name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, char* position1, char* nation1, int weig1, int heig1) 
+	field_player( std::string name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, std::string position1, std::string nation1, int weig1, int heig1) 
 	{
-		strcpy(name, name1);
-		strcpy(nation, nation1);
+		name= name1;
+		nation= nation1;
 		age = age1;
 		games = games1;
 		goals = goals1;
 		assists = assists1;
 		red_cards = red1;
 		yellow_cards = yellow1;
-		strcpy(position,position1);
+		position=position1;
 		weight = weig1;
 		height = heig1;
 	};
-	void change_name( char* name1)
+	void change_name( std::string name1)
 	{
-		strcpy(name, name1);
+		name =name1;
 	};
-	void change_position( char* position1)
+	void change_position( std::string position1)
 	{
-		strcpy(position, position1);
+		position= position1;
 	};
-	void change_nation( char* nation1)
+	void change_nation( std::string nation1)
 	{
-		strcpy(nation, nation1);
+		nation= nation1;
 	};
 	void change_games( int games1)
 	{
@@ -79,18 +79,18 @@ public:
 	{
 		assists = assists1;
 	};
-	char* return_name() { return name; };
-	char* return_nation() { return nation; };
+	std::string return_name() { return name; };
+	std::string return_nation() { return nation; };
 	int return_age() { return age; };
 	int return_games() { return games; };
 	int return_goals() { return goals; };
 	int return_assists() { return assists; };
 	int return_red_cards() { return red_cards; };
 	int return_yellow_cards() { return yellow_cards; };
-	char* return_position() { return position; };
+	std::string return_position() { return position; };
 	int return_weight() { return weight; };
 	int return_height() { return height; };
 	//~field_player();
-	void vivod() { printf("%s %s %d %d %d %d %d %d %d %d %s %d %d", name, nation, age, games, goals, assists, red_cards, yellow_cards, position, weight, height); };
+	void vivod() { std::cout<< name<<" "<< nation<<" "<< age<<" "<< games<<" "<< goals<<" "<< assists<<" "<< red_cards<<" "<< yellow_cards<<" "<< position<<" "<< weight<<" "<< height<<"\n"; };
 	};
 

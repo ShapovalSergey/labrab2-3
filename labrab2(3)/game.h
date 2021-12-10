@@ -6,42 +6,42 @@
 class game
 {
 private:
-	char league_name[50];
-	char home_team[50];
-	char visitor_team[50];
-	char result[10];
+	std::string league_name;
+	std::string home_team;
+	std::string visitor_team;
+	std::string result;
 	//////////////////////////func
 public:
 	
 	game() {};
-	game(char* name, char* rez, char* vis, char* home)
+	game(std::string name, std::string rez, std::string vis, std::string home)
 	{
-		strcpy(league_name,name);
-		strcpy(home_team,home);
-		strcpy(visitor_team,vis);
-		strcpy(result,rez);
+		league_name,name;
+		home_team,home;
+		visitor_team,vis;
+		result,rez;
 	};
-	void change_name( char* name1)
+	void change_name( std::string name1)
 	{
-		strcpy(league_name, name1);
+		league_name, name1;
 	};
-	void change_home_team( char* home_team1)
+	void change_home_team( std::string home_team1)
 	{
-		strcpy(home_team, home_team1);
+		home_team, home_team1;
 	};
-	void change_visitor_team( char* visitor_team)
+	void change_visitor_team( std::string visitor_team)
 	{
-		strcpy(this->visitor_team, visitor_team);
+		this->visitor_team, visitor_team;
 	};
-	void change_result( char* result1)
+	void change_result( std::string result1)
 	{
-		strcpy(result, result1);
+		result, result1;
 	};
-	char* return_name() { return league_name; };
-	char* return_home_team() { return home_team; };
-	char* return_visitor_team() { return visitor_team; };
-	char* return_result() { return result; };
-	void vivod() { printf("%s\n%s %s %s\n", league_name,home_team,result, visitor_team); };
+	std::string return_name() { return league_name; };
+	std::string return_home_team() { return home_team; };
+	std::string return_visitor_team() { return visitor_team; };
+	std::string return_result() { return result; };
+	void vivod() { std::cout << league_name<<" "<<home_team<<" "<<result<<" "<< visitor_team<<"\n"; };
 	//~game();
 };
 

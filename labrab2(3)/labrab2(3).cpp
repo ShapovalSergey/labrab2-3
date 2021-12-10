@@ -64,6 +64,9 @@ void input_full_gp(goalkeeper* a)
     printf("Введите возраст\n");
     scanf("%d", &i);
     a->change_age(i);
+    printf("Введите количество матчей вратаря\n");
+    scanf("%d", &i);
+    a->change_games(i);
     printf("Введите количество голов вратаря\n");
     scanf("%d", &i);
     a->change_goals(i);
@@ -102,6 +105,9 @@ void input_full_fp(field_player* a)
     printf("Введите количество голов полевого игрока\n");
     scanf("%d", &i);
     a->change_goals(i);
+    printf("Введите количество матчей полевого игрока\n");
+    scanf("%d", &i);
+    a->change_games(i);
     printf("Введите количество асистов полевого игрока\n");
     scanf("%d", &i);
     a->change_assists(i);
@@ -1179,11 +1185,19 @@ void func7()
     }
 };
 
-
+int stat(team& tm)
+{
+    int points;
+    points = tm.wins * 3 + tm.draws;
+    //printf("\nКоличество очков команды = %d", points);
+    return points;
+};
+team operator + (team team1, team team2) { return team(team1+team2); };
 
 int main()
  {
-    setlocale(LC_ALL, "Russian"); int mode; int check = 1;
+    setlocale(LC_ALL, "Russian"); int mode; int check = 1; SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     while (check==1)
     {
     printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n7)Реализация ассоциаций\n");

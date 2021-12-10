@@ -12,44 +12,43 @@ class team;
 class league
 { 
 private:
-	char name [50];
+	std::string name ;
 	int value_of_teams;
-	char years[15];
-	char location[50];
+	std::string years;
+	std::string location;
 	//////////////////////////func
 public:
 	//std::vector<team*> tm;
 	team tm;
 	void Addteam(team* a) 
-	{
-		//tm.push_back(a); 
+	{ 
 		tm = *a;
 	};
 	league() {};
-	league(const char* name1, int value_of_teams1, const char* years1, const char* location1)
+	league(const std::string name1, int value_of_teams1, const std::string years1, const std::string location1)
 	{
-		strcpy(name,name1);
+		name,name1;
 		value_of_teams = value_of_teams1;
-		strcpy(years, years1);
-		strcpy(location, location1);
+		years, years1;
+		location, location1;
 	};
-	void change_name( char* name1) 
+	void change_name( std::string name1) 
 	{
-		strcpy(this->name, name1);
+		this->name= name1;
 	};
 	void change_value( int value)
 	{
 		value_of_teams = value;
 	};
-	void change_years( char* years1)
+	void change_years( std::string years1)
 	{
-		strcpy(years, years1);
+		years= years1;
 	};
-	void change_loc( char* location1)
+	void change_loc( std::string location1)
 	{
-		strcpy(location, location1);
+		location= location1;
 	};
-	char* return_name() 
+	std::string return_name() 
 	{
 		return name;
 	};
@@ -57,11 +56,11 @@ public:
 	{ 
 		return value_of_teams;
 	};
-	char* return_years()
+	std::string return_years()
 	{
 		return years;
 	};
-	char* return_location()
+	std::string return_location()
 	{
 		return location;
 	};
@@ -71,7 +70,7 @@ public:
 		printf("%s\n",/* i + 1*/tm.return_name()); 
 	};
 	team& return_team() { return tm; };
-	void vivod() { printf("%s %d %s %s",name,value_of_teams,years,location); };
+	void vivod() { std::cout<<name<<" "<<value_of_teams<<" "<<years<<" "<<location<<" "; };
 };
 
 
