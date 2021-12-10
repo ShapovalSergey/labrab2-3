@@ -95,6 +95,5 @@ public:
 	//~team();
 	void vivod() { std::cout << name<<" "<< location; printf("\n%d %d %d %d %d %d", defeats, wins, draws, value_of_field_players, value_of_goalkeepers, stat(*this)); };
 	friend int stat(team &tm);
-	
 };
 

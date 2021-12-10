@@ -28,7 +28,12 @@ char im[50],loc[50],season[15]; int i;
                 scanf("%s",&loc);
                 a->change_loc(loc);
 };
+team operator + (team team1, team team2);
+field_player& operator++(field_player fp);
+field_player operator++(field_player fp,int i);
 
+goalkeeper& operator++(goalkeeper fp);
+goalkeeper operator++(goalkeeper fp, int i);
 void input_full_team(team* a)
 {
     char im[50], loc[50]; int i;
@@ -318,7 +323,8 @@ void func2()
             }
             if (action == 9)
             {
-                a.vivod();
+                team t3; t3 = operator+(a,b1);
+                t3.vivod();
             }
             _getch();
             printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
@@ -1192,7 +1198,41 @@ int stat(team& tm)
     //printf("\nКоличество очков команды = %d", points);
     return points;
 };
-team operator + (team team1, team team2) { return team(team1+team2); };
+team operator + (team team1, team team2) 
+{ 
+    team t3;
+    t3.change_name(team1.return_name() + team2.return_name());
+    t3.change_draws(team1.return_draws() + team2.return_draws());
+    t3.change_defeats(team1.return_defeats() + team2.return_defeats());
+    t3.change_wins(team1.return_wins() + team2.return_wins());
+    t3.change_value_of_field_players(team1.return_value_of_field_players() + team2.return_value_of_field_players());
+    t3.change_value_of_goalkeepers(team1.return_value_of_goalkeepers() + team2.return_value_of_goalkeepers());
+    t3.change_location(team1.return_location() + team2.return_location());
+    return t3;
+};
+field_player operator++(field_player fp,int i) 
+{
+   field_player fp1 = fp;
+   fp.change_age(fp.return_age()+i);
+   return fp1;
+};
+field_player& operator++(field_player fp)
+{
+    fp.change_age(fp.return_age() + 1);
+    return fp;
+};
+goalkeeper operator++(goalkeeper fp, int i)
+{
+    goalkeeper fp1 = fp;
+    fp.change_age(fp.return_age() + i);
+    return fp1;
+};
+goalkeeper& operator++(goalkeeper fp)
+{
+    fp.change_age(fp.return_age() + 1);
+    return fp;
+};
+
 
 int main()
  {
