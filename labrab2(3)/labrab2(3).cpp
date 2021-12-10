@@ -1128,7 +1128,7 @@ void association_tm_lg()
         }
         if (mode == 4)
         {
-            int leag; printf("Выберите лигу \n");
+            int leag; printf("Выберите лигу \n");team km;
             for (int i = 0; i < val_league; i++)
             {
                 printf("%d) %s\n", i + 1, tm[i].return_name());
@@ -1144,7 +1144,9 @@ void association_tm_lg()
             }
             else
             {
-                lea[leag - 1].teamvivod();
+                km = lea[leag - 1].return_team();
+                km.vivod();
+               // lea[leag - 1].teamvivod();
             }   
         }
         printf("\nВы хотите продолжить работать с данной ассоциацией 1 - да, 0 - нет ");
