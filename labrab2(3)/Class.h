@@ -25,12 +25,12 @@ public:
 		tm = *a;
 	};
 	league() {};
-	league(const std::string name1, int value_of_teams1, const std::string years1, const std::string location1)
+	league(std::string name1, int value_of_teams1,  std::string years1,  std::string location1)
 	{
-		name,name1;
+		name=name1;
 		value_of_teams = value_of_teams1;
-		years, years1;
-		location, location1;
+		years= years1;
+		location= location1;
 	};
 	void change_name( std::string name1) 
 	{

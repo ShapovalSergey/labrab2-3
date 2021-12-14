@@ -12,6 +12,51 @@
 
 league a1("РПЛ",16,"2020-2021","Россия");
 team b1("Динамо", 10, 9, 1, 15, 3, "Москва");
+void input_full_league(league *a);
+void change_league(league *b) 
+{
+    int action, i; 
+    {
+        printf("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
+        scanf("%d", &action);
+        if (action == 1)
+        {
+            input_full_league(b);
+        }
+        if (action == 2)
+        {
+            char im[50];
+            printf("Введите название лиги\n");
+            scanf("%s", &im);
+            b->change_name(im);
+        }
+        if (action == 3)
+        {
+            int i;
+            printf("Введите количество команд\n");
+            scanf("%d", &i);
+            b->change_value(i);
+        }
+        if (action == 4)
+        {
+            char season[15];
+            printf("Введите сезон лиги\n");
+            scanf("%s", &season);
+            b->change_years(season);
+        }
+        if (action == 5)
+        {
+            char  loc[50];
+            printf("Введите страну лиги\n");
+            scanf("%s", &loc);
+            b->change_loc(loc);
+        }
+        if (action == 6)
+        {
+            b->vivod();
+        }
+    }
+};
 void input_full_league(league *a) 
 {
 char im[50],loc[50],season[15]; int i;
@@ -163,92 +208,15 @@ void func1()
         scanf("%d",&mode);
         while (mode==1)
         {
-            printf("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
-            scanf("%d",&action);
-            if (action ==1)
-            {
-                input_full_league(&a);
-            }
-            if (action == 2)
-            {
-                char im[50];
-                printf("Введите название лиги\n");
-                scanf("%s", &im);
-                a.change_name(im);
-            }
-            if (action == 3)
-            {
-                int i;
-                printf("Введите количество команд\n");
-                scanf("%d", &i);
-                a.change_value(i);
-            }
-            if (action == 4)
-            {
-                char season[15];
-                printf("Введите сезон лиги\n");
-                scanf("%s", &season);
-                a.change_years(season);
-            }
-            if (action == 5)
-            {
-                char  loc[50];
-                printf("Введите страну лиги\n");
-                scanf("%s", &loc);
-                a.change_loc(loc);
-            }
-            if (action == 6)
-            {
-                a.vivod();
-            }
+            change_league(&a);
             _getch();
             printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
         }
         league* b = new league();
-        while (mode ==2)
+        while (mode == 2) 
         {
-            printf("Выберите, что вы хотите сделать\n1)Ввести данные лиги\n2)Изменить имя лиги\n3)Изменить количество команд\n4)Изменить сезон лиги\n5)Изменить страну лиги\n6)Вывести данные лиги\n");
-            scanf("%d", &action);
-            if (action == 1)
-            {
-                input_full_league(b);
-            }
-            if (action == 2)
-            {
-                char im[50];
-                printf("Введите название лиги\n");
-                scanf("%s", &im);
-                b->change_name(im);
-            }
-            if (action == 3)
-            {
-                int i;
-                printf("Введите количество команд\n");
-                scanf("%d", &i);
-                b->change_value(i);
-            }
-            if (action == 4)
-            {
-                char season[15];
-                printf("Введите сезон лиги\n");
-                scanf("%s", &season);
-                b->change_years(season);
-            }
-            if (action == 5)
-            {
-                char  loc[50];
-                printf("Введите страну лиги\n");
-                scanf("%s", &loc);
-                b->change_loc(loc);
-            }
-            if (action == 6)
-            {
-                b->vivod();
-            }
-            _getch();
-            printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
-            scanf("%d", &mode);
+            change_league(b);
         }
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check); 
@@ -1191,6 +1159,75 @@ void func7()
     }
 };
 
+void func8() 
+{
+    int check = 1; int mode;
+    while (check == 1)
+    {
+        league a[2][3]; 
+        a[0][0] = { std::string("РПЛ"),16,std::string("2020-2021"),std::string("Россия") };
+        a[0][1] = { "ФНЛ",20,"2020-2021","Россия" };
+        a[0][2] = { "ФНЛ-2",62,"2020-2021","Россия" };
+        a[1][0] = { "APL",20,"2020-2021","Англия" };
+        a[1][1] = { "Championship",20,"2020-2021","Англия" };
+        a[1][2] = { "League One",20,"2020-2021","Англия" };
+        printf("Выберите, что вы хотите сделать\n1)Изменить лигу\n2)Вывести данные лиги\n3)Вывести лиги страны\n");
+        scanf("%d",&mode);
+        if (mode==1)
+        {
+            int country,div;
+            printf("Выберите страну:\n1)Россия\n2)Англия\n ");
+            scanf("%d",&country);
+            if (country==1)
+            {
+                printf("Выберите дивизион:\n1)РПЛ\n2)ПФЛ\n3)ПФЛ-2\n ");
+                scanf("%d",&div);
+                change_league(&a[country-1][div-1]);
+            }
+            if (country==2)
+            {
+                printf("Выберите дивизион:\n1)APL\n2)Championship\n3)League One\n");
+                scanf("%d", &div);
+                change_league(&a[country - 1][div - 1]);
+            }
+        }
+        if (mode==2)
+        {
+            int country, div;
+            printf("Выберите страну:\n1)Россия\n2)Англия\n ");
+            scanf("%d", &country);
+            if (country == 1)
+            {
+                printf("Выберите дивизион:\n1)РПЛ\n2)ПФЛ\n3)ПФЛ-2\n");
+                scanf("%d", &div);
+                a[country - 1][div - 1].vivod();
+            }
+            if (country == 2)
+            {
+                printf("Выберите дивизион:\n1)APL\n2)Championship\n3)League One\n");
+                scanf("%d", &div);
+                a[country - 1][div - 1].vivod();
+            }
+        }
+        if (mode==3)
+        {
+            int country, div;
+            printf("Выберите страну:\n1)Россия\n2)Англия\n");
+            scanf("%d", &country);
+            a[country - 1][0].return_name();
+            a[country - 1][1].return_name();
+            a[country - 1][2].return_name();
+          
+        }
+        printf("\nВы хотите продолжить работать с пунктом 8 (двумерные массивы)? 1 - да, 0 - нет ");
+        scanf("%d", &check);
+
+    }
+
+};
+
+
+
 int stat(team& tm)
 {
     int points;
@@ -1240,7 +1277,7 @@ int main()
     SetConsoleOutputCP(1251);
     while (check==1)
     {
-    printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n7)Реализация ассоциаций\n");
+    printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n7)Реализация ассоциаций\n8)Двойной массив класса league\n");
     scanf("%d",&mode);
     if (mode==1)
     {
@@ -1269,6 +1306,10 @@ int main()
     if (mode == 7)
     {
         func7();
+    }
+    if (mode==8)
+    {
+        func8();
     }
     printf("Вы хотите продолжить? 1 - да, 0 - нет ");
     scanf("%d",&check);
