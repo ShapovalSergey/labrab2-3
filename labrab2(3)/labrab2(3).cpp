@@ -1214,9 +1214,7 @@ void func8()
             int country, div;
             printf("Выберите страну:\n1)Россия\n2)Англия\n");
             scanf("%d", &country);
-            a[country - 1][0].return_name();
-            a[country - 1][1].return_name();
-            a[country - 1][2].return_name();
+            std::cout << a[country - 1][0].return_name()<<"\n"<<a[country - 1][1].return_name()<<"\n"<<a[country - 1][2].return_name()<<"\n";
           
         }
         printf("\nВы хотите продолжить работать с пунктом 8 (двумерные массивы)? 1 - да, 0 - нет ");
