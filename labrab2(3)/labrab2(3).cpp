@@ -1229,6 +1229,7 @@ void func8()
 void func9() 
 {
     std::cout<<"Количество команд = "<<team::getN()<<"\n";
+    printf("%d\n", b1.getN());
 };
 
 
