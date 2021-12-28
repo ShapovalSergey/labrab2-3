@@ -9,7 +9,7 @@
 #include <locale.h>
 #include <iostream>
 #include <conio.h>
-
+int team::n = 0;
 league a1("РПЛ",16,"2020-2021","Россия");
 team b1("Динамо", 10, 9, 1, 15, 3, "Москва");
 void input_full_league(league *a);
@@ -228,12 +228,13 @@ void func2()
 {
     int check = 1; int mode; int action;
     while (check == 1)
-    {
-        team a;
+    { 
+         team a;
         printf("Выберите с каким типом переменных вы хотите работать 1 - статический, 2 - динамический ");
         scanf("%d", &mode);
         while (mode == 1)
-        {
+        {   
+          
             printf("Выберите, что вы хотите сделать\n1)Ввести данные команды\n2)Изменить название команды\n3)Изменить количество побед команды\n4)Изменить количество поражений команды\n5)Изменить количество ничьих команды\n6)Изменить количество полевых игроков\n7)Изменить количество вратарей\n8)Изменить город команды\n9)Вывести данные команды\n");
             scanf("%d", &action);
             if (action == 1)
@@ -291,16 +292,18 @@ void func2()
             }
             if (action == 9)
             {
-                team t3; t3 = operator+(a,b1);
-                t3.vivod();
+                //team t3; t3 = operator+(a,b1);
+                a.vivod();
             }
             _getch();
             printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
             scanf("%d", &mode);
         }
-        team* b = new team();
+         team::minN();
+         team* b = new team();
         while (mode == 2)
-        {
+        {   
+           
             printf("Выберите, что вы хотите сделать\n1)Ввести данные команды\n2)Изменить название команды\n3)Изменить количество побед команды\n4)Изменить количество поражений команды\n5)Изменить количество ничьих команды\n6)Изменить количество полевых игроков\n7)Изменить количество вратарей\n8)Изменить город команды\n9)Вывести данные команды\n");
             scanf("%d", &action);
             if (action == 1)
@@ -366,7 +369,7 @@ void func2()
         }
         printf("Вы хотите продолжить c этим классом? 1 - да, 0 - нет ");
         scanf("%d", &check);
-        delete b;        
+        delete b; team::minN();
     }
 };
 
@@ -1223,7 +1226,10 @@ void func8()
     }
 
 };
-
+void func9() 
+{
+    std::cout<<"Количество команд = "<<team::getN()<<"\n";
+};
 
 
 int stat(team& tm)
@@ -1243,7 +1249,7 @@ team operator + (team team1, team team2)
     t3.change_value_of_field_players(team1.return_value_of_field_players() + team2.return_value_of_field_players());
     t3.change_value_of_goalkeepers(team1.return_value_of_goalkeepers() + team2.return_value_of_goalkeepers());
     t3.change_location(team1.return_location() + team2.return_location());
-    return t3;
+   team::minN(); return t3; 
 };
 field_player operator++(field_player fp,int i) 
 {
@@ -1275,7 +1281,7 @@ int main()
     SetConsoleOutputCP(1251);
     while (check==1)
     {
-    printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n7)Реализация ассоциаций\n8)Двойной массив класса league\n");
+    printf("Выберите с каким классом вы хотите работать\n1)Лига\n2)Команда\n3)Вратари\n4)Полевые\n5)Игры\n6)Динамический массив или массив динамических объектов (класс game)\n7)Реализация ассоциаций\n8)Двойной массив класса league\n9)Узнать количество команд\n");
     scanf("%d",&mode);
     if (mode==1)
     {
@@ -1308,6 +1314,10 @@ int main()
     if (mode==8)
     {
         func8();
+    }
+    if (mode == 9)
+    {
+        func9();
     }
     printf("Вы хотите продолжить? 1 - да, 0 - нет ");
     scanf("%d",&check);

@@ -10,6 +10,7 @@ class goalkeeper;
 
 class team
 {
+	static int n;
 private:
 	std::string name;
 	int wins;
@@ -20,7 +21,8 @@ private:
 	std::string location;
 	//////////////////////////func
 public:
-	team() {};
+	static int getN() { return n; };
+	team() { n++; };
 	team(const char* name1, int wins1, int defeats1, int draws1, int val_of_fp, int val_of_gk, const char* location1) 
 	{
 
@@ -31,7 +33,10 @@ public:
 		value_of_field_players = val_of_fp;
 		value_of_goalkeepers = val_of_gk;
 		location = location1;
+		n++;
 	};
+	
+	static void minN() { n--; };
 	std::vector<field_player*> fp;
 	std::vector<goalkeeper*> gp;
 	void Addgoalkeeper(goalkeeper* a) 
