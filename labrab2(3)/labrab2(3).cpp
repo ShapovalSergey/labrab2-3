@@ -752,7 +752,7 @@ void func4()
                 int k,i; k = b->return_yellow_cards(); 
                 for (i = 0; k > -1; i++)
                 {
-                    k -= a.RetDisq();
+                    k -= b->RetDisq();
                 }
                 printf("Количество матчей = %d\n", i);
             }
