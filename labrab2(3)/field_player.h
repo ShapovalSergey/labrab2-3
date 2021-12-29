@@ -5,6 +5,7 @@
 
 class field_player
 {
+	static int disq;
 private:
 	std::string name;
 	int age;
@@ -20,6 +21,7 @@ private:
 	
 	//////////////////////////func
 public:
+	static int RetDisq() { return disq; };
 	field_player() {};
 	field_player( std::string name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, std::string position1, std::string nation1, int weig1, int heig1) 
 	{
