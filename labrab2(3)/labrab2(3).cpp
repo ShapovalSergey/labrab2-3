@@ -654,7 +654,7 @@ void func4()
             if (action == 13)
             {
                 int k; k = a.return_yellow_cards(); int i;
-                for ( i = 0; k >-1; i++)
+                for ( i = 0; k >=4; i++)
                 {
                     k -= a.RetDisq();
                 }
@@ -750,7 +750,7 @@ void func4()
             if (action == 13)
             {
                 int k,i; k = b->return_yellow_cards(); 
-                for (i = 0; k > -1; i++)
+                for (i = 0; k >=4; i++)
                 {
                     k -= b->RetDisq();
                 }
