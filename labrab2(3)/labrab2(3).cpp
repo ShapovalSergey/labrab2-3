@@ -1253,7 +1253,7 @@ void func9()
 
 void func10()
 {
-    team a; team x("Зенит"); team y("Локомотив");
+    team a; team x("Зенит"); team y("Локомотив"); char* str=new char[10]; strcpy(str,"asd");
     team b("Спартак");
     team c("Динамо", 10, 9, 1, 15, 3, "Москва");
     team d[2] = {x,y};
@@ -1263,6 +1263,12 @@ void func10()
     printf("\nКонструктор команды со всеми параметрами: "); c.vivod();
     printf("\nМассив инициализированный конструктором с одним параметром: "); d[0].vivod();  printf("\n"); d[1].vivod();
     printf("\n");
+
+    team a2(str);
+    team copy = a2;
+    printf("%s\n",copy.retsht());
+    delete str;
+    printf("%s\n", copy.retsht());
 };
 
 

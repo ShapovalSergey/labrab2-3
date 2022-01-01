@@ -19,6 +19,7 @@ private:
 	int value_of_field_players;
 	int value_of_goalkeepers;
 	std::string location;
+	char* sht;
 	//////////////////////////func
 public:
 	static int getN() { return n; };
@@ -36,6 +37,44 @@ public:
 		n++;
 	};
 	team(const char* name1) { name = name1; n++;};
+	team(const team& team1) { sht = team1.sht; };
+	/*team(const team &team1) {
+		name = team1.name;
+		wins = team1.wins;
+		defeats = team1.defeats;
+		draws = team1.draws;
+		value_of_field_players = team1.value_of_field_players;
+		value_of_goalkeepers = team1.value_of_goalkeepers;
+		location = team1.location;
+		if (team1.sht)
+		{
+			sht = new char[10];
+			for (int i = 0; i < 10; ++i)
+				sht[i] = team1.sht[i];
+		}
+		else
+			sht = 0;
+	};
+	
+	team& operator=(const team& team1) 
+	{
+		
+		if (this == &team1)
+			return *this;
+		delete sht;
+		if (team1.sht)
+		{
+			sht = new char[10];
+			for (int i = 0; i < 10; ++i)
+				sht[i] = team1.sht[i];
+		}
+		else
+			sht = 0;
+		
+		return *this;
+	};*/
+	team(char* sht1) { sht = sht1; };
+	char* retsht() { return sht; };
 	static void minN() { n--; };
 	std::vector<field_player*> fp;
 	std::vector<goalkeeper*> gp;
