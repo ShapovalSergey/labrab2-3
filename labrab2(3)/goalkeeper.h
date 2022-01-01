@@ -33,6 +33,7 @@ public:
 		weight = weig1;
 		height = heig1;
 	};
+	goalkeeper(std::string name1) { name = name1; };
 	void change_name( std::string name1 )
 	{
 		name= name1;

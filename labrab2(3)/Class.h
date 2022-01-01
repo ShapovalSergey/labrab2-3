@@ -32,6 +32,7 @@ public:
 		years= years1;
 		location= location1;
 	};
+	league(std::string name1) { name = name1; };
 	void change_name( std::string name1) 
 	{
 		this->name= name1;

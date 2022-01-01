@@ -35,7 +35,7 @@ public:
 		location = location1;
 		n++;
 	};
-	
+	team(const char* name1) { name = name1; n++;};
 	static void minN() { n--; };
 	std::vector<field_player*> fp;
 	std::vector<goalkeeper*> gp;

@@ -21,6 +21,7 @@ public:
 		visitor_team=vis;
 		result=rez;
 	};
+	game(std::string name) { league_name = name; };
 	void change_name( std::string name1)
 	{
 		league_name= name1;
