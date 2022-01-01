@@ -37,8 +37,8 @@ public:
 		n++;
 	};
 	team(const char* name1) { name = name1; n++;};
-	team(const team& team1) { sht = team1.sht; };
-	/*team(const team &team1) {
+	//team(const team& team1) { sht = team1.sht; };
+	team(const team &team1) {
 		name = team1.name;
 		wins = team1.wins;
 		defeats = team1.defeats;
@@ -72,7 +72,7 @@ public:
 			sht = 0;
 		
 		return *this;
-	};*/
+	};
 	team(char* sht1) { sht = sht1; };
 	char* retsht() { return sht; };
 	static void minN() { n--; };
