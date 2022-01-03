@@ -88,12 +88,32 @@ void input_full_team(team* a)
     a->change_name(im);
     printf("Введите количество побед\n");
     scanf("%d", &i);
+    try
+    {
+        if (i<0)
+            throw  "Вы ввели отрицательное число, это может привести к некорректным результатам работы\n";
+       
+    }
+    catch (const char* exception)
+    {
+        std::cerr << "Error: " << exception << '\n';
+    }
     a->change_wins(i);
     printf("Введите количество поражений\n");
     scanf("%d", &i);
     a->change_defeats(i);
     printf("Введите количество ничьих\n");
     scanf("%d", &i);
+    try
+    {
+        if (i < 0)
+            throw  "Вы ввели отрицательное число, это может привести к некорректным результатам работы\n";
+
+    }
+    catch (const char* exception)
+    {
+        std::cerr << "Error: " << exception << '\n';
+    }
     a->change_draws(i);
     printf("Введите количество полевых игроков\n");
     scanf("%d", &i);
@@ -104,6 +124,12 @@ void input_full_team(team* a)
     printf("Введите город команды\n");
     scanf("%s", &loc);
     a->change_location(loc);
+
+   
+
+
+
+
 };
 
 void input_full_gp(goalkeeper* a) 
@@ -1275,7 +1301,20 @@ void func10()
 int stat(team& tm)
 {
     int points;
+    try
+    {
+        if ((tm.wins<0)||(tm.draws<0))
+        {
+            throw   "Не удается получить корректный результат";
+        }
     points = tm.wins * 3 + tm.draws;
+    }
+    catch (const char* exception)
+    {
+        std::cerr << "\nError: " << exception;
+        points = 2147483647;
+    }
+    
     //printf("\nКоличество очков команды = %d", points);
     return points;
 };
