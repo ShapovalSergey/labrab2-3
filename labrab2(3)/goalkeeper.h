@@ -16,12 +16,17 @@ private:
 	int height;
 	//////////////////////////func
 public:
+	goalkeeper operator=(player pl)
+	{
+		change_name(pl.return_name());
+		change_nation(pl.return_nation());
+		change_age(pl.return_age());
+		return *this;
+	};
 	goalkeeper() {};
 	goalkeeper( std::string name1,int age1,int games1,int goals1, int assists1,int red1,int yellow1,int miss1, std::string nation1, int weig1, int heig1 )
 	{
-		change_name(name1);
-		change_nation(nation1);
-		change_age(age1);
+		player(name1, age1, nation1);
 		games = games1;
 		goals = goals1;
 		assists = assists1;
@@ -74,6 +79,11 @@ public:
 	int return_weight() {return weight;};
 	int return_height() { return height; };
 	//~goalkeeper();
-	void vivod() { std::cout<<return_name()<<" "<<return_nation()<<" "<<return_age()<<" "<< games<<" "<< goals<<" "<< assists<<" "<< red_cards<<" "<< yellow_cards<<" "<< missed_balls<<" "<< weight<<" "<< height; };
+	//void vivod() { std::cout<<return_name()<<" "<<return_nation()<<" "<<return_age()<<" "<< games<<" "<< goals<<" "<< assists<<" "<< red_cards<<" "<< yellow_cards<<" "<< missed_balls<<" "<< weight<<" "<< height; };
+	friend std::ostream& operator<<(std::ostream& os, goalkeeper gp)
+	{
+		os << gp.name <<" "<< gp.nation <<" "<< gp.age <<" "<< gp.games <<" "<< gp.goals <<" "<< gp.assists <<" "<< gp.red_cards <<" "<< gp.yellow_cards <<" "<< gp.missed_balls <<" "<< gp.weight <<" "<< gp.height;
+		return os;
 	};
+};
 
