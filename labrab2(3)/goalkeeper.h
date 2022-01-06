@@ -1,19 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include <iostream>
+#include "player.h"
 
-class goalkeeper
+class goalkeeper:public player
 {
 private:
-	std::string name;
-	int age;
 	int games;
 	int goals;
 	int assists;
 	int red_cards;
 	int yellow_cards;
 	int missed_balls;
-	std::string nation;
 	int weight;
 	int height;
 	//////////////////////////func
@@ -21,9 +19,9 @@ public:
 	goalkeeper() {};
 	goalkeeper( std::string name1,int age1,int games1,int goals1, int assists1,int red1,int yellow1,int miss1, std::string nation1, int weig1, int heig1 )
 	{
-		name=name1;
-		nation=nation1;
-		age = age1;
+		change_name(name1);
+		change_nation(nation1);
+		change_age(age1);
 		games = games1;
 		goals = goals1;
 		assists = assists1;
@@ -33,15 +31,7 @@ public:
 		weight = weig1;
 		height = heig1;
 	};
-	goalkeeper(std::string name1) { name = name1; };
-	void change_name( std::string name1 )
-	{
-		name= name1;
-	};
-	void change_nation( std::string nation1)
-	{
-		nation= nation1;
-	};
+	goalkeeper(std::string name1) { change_name(name1); };
 	void change_games( int games1)
 	{
 		games = games1;
@@ -49,10 +39,6 @@ public:
 	void change_goals( int goals1)
 	{
 		goals = goals1;
-	};
-	void change_age( int age1)
-	{
-		age = age1;
 	};
 	void change_red_cards( int red_cards1)
 	{
@@ -78,9 +64,7 @@ public:
 	{
 		assists = assists1;
 	};
-	std::string return_name() { return name; };
-	std::string return_nation() { return nation; };
-	int return_age() { return age; };
+
 	int return_games() { return games; };
 	int return_goals() { return goals; };
 	int return_assists() {return assists;};
@@ -90,6 +74,6 @@ public:
 	int return_weight() {return weight;};
 	int return_height() { return height; };
 	//~goalkeeper();
-	void vivod() { std::cout<<name<<" "<<nation<<" "<<age<<" "<< games<<" "<< goals<<" "<< assists<<" "<< red_cards<<" "<< yellow_cards<<" "<< missed_balls<<" "<< weight<<" "<< height; };
+	void vivod() { std::cout<<return_name()<<" "<<return_nation()<<" "<<return_age()<<" "<< games<<" "<< goals<<" "<< assists<<" "<< red_cards<<" "<< yellow_cards<<" "<< missed_balls<<" "<< weight<<" "<< height; };
 	};
 
