@@ -22,7 +22,9 @@ public:
 	field_player() {};
 	field_player( std::string name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, std::string position1, std::string nation1, int weig1, int heig1) 
 	{
-		player(name1,age1,nation1);
+		change_name(name1);
+		change_nation(nation1);
+		change_age(age1);
 		games = games1;
 		goals = goals1;
 		assists = assists1;
@@ -33,9 +35,6 @@ public:
 		height = heig1;
 	};
 	field_player(std::string name1) { change_name(name1); };
-	void change_name(std::string name1) { player::change_name(name1); };
-	void change_nation(std::string nation1) { nation = nation1;; };
-	//void change_age(int age1) { change_age(age1); };
 	void change_position( std::string position1)
 	{
 		position= position1;

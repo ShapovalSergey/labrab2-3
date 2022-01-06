@@ -4,24 +4,11 @@
 #include <iostream>
 class player
 {
-protected:
+private:
 	std::string name;
 	int age;
 	std::string nation;
 public:
-	/*player& operator=(const player& pl) 
-	{
-		name = pl.name;
-		age = pl.age;
-		nation = pl.nation;
-	};*/
-	player(std::string name1, int age1, std::string nation1) 
-	{
-		name = name1;
-		age = age1;
-		nation = nation1;
-	};
-	player() {};
 	void change_name(std::string name1)
 	{
 		name = name1;

@@ -13,7 +13,6 @@ int team::n = 0;
 int field_player::disq = 4;
 league a1("РПЛ",16,"2020-2021","Россия");
 team b1("Динамо", 10, 9, 1, 15, 3, "Москва");
-player pl1("Imya",21,"Naciya");
 void input_full_league(league *a);
 void change_league(league *b) 
 {
@@ -489,12 +488,7 @@ void func3()
             }
             if (action == 12)
             {
-                std::cout << a;// a.vivod();
-            }
-            if (action==13)
-            {
-                a.operator=(pl1);
-                std::cout << a;// a.vivod();
+                a.vivod();
             }
             _getch();
             printf("\nВы хотите продолжить с этим типом данных? 1 - да, 0 - нет ");
@@ -581,7 +575,7 @@ void func3()
             }
             if (action == 12)
             {
-                std::cout << b;// b->vivod();
+                b->vivod();
             }
             _getch();
             printf("\nВы хотите продолжить с этим типом данных? 2 - да, 0 - нет ");
@@ -1358,12 +1352,6 @@ goalkeeper& operator++(goalkeeper fp)
     fp.change_age(fp.return_age() + 1);
     return fp;
 };
-/*goalkeeper& operator=(goalkeeper fp,player pl)
-{
-    fp.change_name(pl.return_name());
-    fp.change_age(pl.return_age());
-    fp.change_nation(pl.return_nation());
-};*/
 
 
 int main()
