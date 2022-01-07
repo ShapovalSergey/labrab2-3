@@ -2,7 +2,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include <iostream>
-class player
+#include "human.h"
+class player:public human
 {
 protected:
 	std::string name;
@@ -16,13 +17,13 @@ public:
 		nation = pl.nation;
 	};*/
 	virtual std::string return_position() { return "Неизвестно"; };
-	player(std::string name1, int age1, std::string nation1) 
+	player(std::string name1, int age1, std::string nation1) :human(1)
 	{
 		name = name1;
 		age = age1;
 		nation = nation1;
 	};
-	player() {};
+	player():human(1) {};
 	void change_name(std::string name1)
 	{
 		name = name1;
@@ -38,5 +39,6 @@ public:
 	std::string return_name() { return name; };
 	std::string return_nation() { return nation; };
 	int return_age() { return age; };
+	virtual std::string create_status() { return "Профессиональный игрок"; };
 };
 

@@ -22,7 +22,7 @@ public:
 	field_player() {};
 	field_player( std::string name1, int age1, int games1, int goals1, int assists1, int red1, int yellow1, std::string position1, std::string nation1, int weig1, int heig1) 
 	{
-		player(name1,age1,nation1);
+		player(name1, age1, nation1);//:human(1);
 		games = games1;
 		goals = goals1;
 		assists = assists1;
