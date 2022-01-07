@@ -23,6 +23,7 @@ public:
 		change_age(pl.return_age());
 		return *this;
 	};
+	virtual std::string return_position() { return "Вратарь"; };
 	goalkeeper() {};
 	goalkeeper( std::string name1,int age1,int games1,int goals1, int assists1,int red1,int yellow1,int miss1, std::string nation1, int weig1, int heig1 )
 	{

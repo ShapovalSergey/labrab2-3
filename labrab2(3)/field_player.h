@@ -32,6 +32,7 @@ public:
 		weight = weig1;
 		height = heig1;
 	};
+	//std::string return_position() { return position; };
 	field_player(std::string name1) { change_name(name1); };
 	void change_name(std::string name1) { player::change_name(name1); };
 	void change_nation(std::string nation1) { nation = nation1;; };
@@ -74,7 +75,7 @@ public:
 	int return_assists() { return assists; };
 	int return_red_cards() { return red_cards; };
 	int return_yellow_cards() { return yellow_cards; };
-	std::string return_position() { return position; };
+	virtual std::string return_position() { return position; };
 	int return_weight() { return weight; };
 	int return_height() { return height; };
 	//~field_player();

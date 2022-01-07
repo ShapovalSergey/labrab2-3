@@ -15,6 +15,7 @@ public:
 		age = pl.age;
 		nation = pl.nation;
 	};*/
+	virtual std::string return_position() { return "Неизвестно"; };
 	player(std::string name1, int age1, std::string nation1) 
 	{
 		name = name1;
