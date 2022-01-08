@@ -8,11 +8,12 @@
 #include <vector>
 #include <Windows.h>
 #include "team.h"
+
 class team;
-class league
-{ 
+class league :public ILicense
+{
 private:
-	std::string name ;
+	std::string name;
 	int value_of_teams;
 	std::string years;
 	std::string location;
@@ -20,41 +21,41 @@ private:
 public:
 	//std::vector<team*> tm;
 	team tm;
-	void Addteam(team* a) 
-	{ 
+	void Addteam(team* a)
+	{
 		tm = *a;
 	};
 	league() {};
-	league(std::string name1, int value_of_teams1,  std::string years1,  std::string location1)
+	league(std::string name1, int value_of_teams1, std::string years1, std::string location1)
 	{
-		name=name1;
+		name = name1;
 		value_of_teams = value_of_teams1;
-		years= years1;
-		location= location1;
+		years = years1;
+		location = location1;
 	};
 	league(std::string name1) { name = name1; };
-	void change_name( std::string name1) 
+	void change_name(std::string name1)
 	{
-		this->name= name1;
+		this->name = name1;
 	};
-	void change_value( int value)
+	void change_value(int value)
 	{
 		value_of_teams = value;
 	};
-	void change_years( std::string years1)
+	void change_years(std::string years1)
 	{
-		years= years1;
+		years = years1;
 	};
-	void change_loc( std::string location1)
+	void change_loc(std::string location1)
 	{
-		location= location1;
+		location = location1;
 	};
-	std::string return_name() 
+	std::string return_name()
 	{
 		return name;
 	};
-	int return_value() 
-	{ 
+	int return_value()
+	{
 		return value_of_teams;
 	};
 	std::string return_years()
@@ -66,12 +67,13 @@ public:
 		return location;
 	};
 	//~league();
-	void teamvivod() 
+	void teamvivod()
 	{
-		printf("%s\n",/* i + 1*/tm.return_name()); 
+		printf("%s\n",/* i + 1*/tm.return_name());
 	};
 	team& return_team() { return tm; };
-	void vivod() { std::cout<<name<<" "<<value_of_teams<<" "<<years<<" "<<location<<" "; };
+	void vivod() { std::cout << name << " " << value_of_teams << " " << years << " " << location << " "; };
+	virtual void GetLicense() { printf("Лицензия лиги - 123"); };
 };
 
 
